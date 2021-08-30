@@ -6,8 +6,9 @@
   "scripts": {
     "deploy": "gh-pages -d dist"
   },
-  "author": "",
+  "author": "yezarniko",
   "license": "ISC",
+  "homepage": "https://yezarniko.github.io",
   "devDependencies": {
     "gh-pages": "^3.2.3",
     "sass": "^1.38.2"
