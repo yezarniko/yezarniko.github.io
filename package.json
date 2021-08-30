@@ -1,0 +1,15 @@
+{
+  "name": "profilo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^3.2.3",
+    "sass": "^1.38.2"
+  }
+}
