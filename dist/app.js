@@ -12,7 +12,7 @@ const handleOnClick = () => {
   handleMenu(buttonState);
 };
 
-const getMenuExpand = () => document.querySelector(".menu-expand");
+const getMenuExpand = () => document.querySelector(".menu__expand");
 
 const handleMenuOnLeave = () => {
   const menuExpand = getMenuExpand();
@@ -28,6 +28,15 @@ const getNavElements = () => {
   return { menu, menuExpand, nav };
 };
 
+const handleMenuOpen = (display) => {
+  const { menu, menuExpand, nav } = getNavElements();
+  menuExpand.style.display = display;
+  menuExpand.style.marginBottom = "0";
+  menu.style.height = "100%";
+  nav.style.backdropFilter = "blur(10px)";
+  nav.style.borderRadius = "0 0 0 0";
+};
+
 const handleMenu = (check) => {
   const openIcon = document.getElementById("open-menu");
   const closeIcon = document.getElementById("close-menu");
@@ -38,27 +47,22 @@ const handleMenu = (check) => {
   if (check) {
     closeIcon.style.display = "inline";
     menuExpand.style.display = "flex";
-    menu.style.height = "42vh";
+    menuExpand.style.marginBottom = "1.5em";
+    menu.style.Maxheight = "42vh";
     nav.style.backdropFilter = "blur(20px)";
     nav.style.borderRadius = "0 0 2em 2em";
   } else {
     openIcon.style.display = "inline";
-    menuExpand.style.display = "none";
-    menu.style.height = "100%";
-    nav.style.backdropFilter = "blur(10px)";
-    nav.style.borderRadius = "0 0 0 0";
+    handleMenuOpen("none");
   }
 };
 
 const handleWindowSize = () => {
   const width = window.innerWidth;
-  const { menu, menuExpand, nav } = getNavElements();
+  const { menuExpand } = getNavElements();
 
   if (width >= MINWIDTH) {
-    menuExpand.style.display = "flex";
-    menu.style.height = "100%";
-    nav.style.backdropFilter = "blur(10px)";
-    nav.style.borderRadius = "0 0 0 0";
+    handleMenuOpen("flex");
   } else {
     if (menuExpand.style.display !== "none") handleMenu(false);
   }
@@ -70,7 +74,7 @@ const handleScroll = () => {
 
 const changeMenuButton = (isScrolled) => {
   const color = isScrolled ? codewarColor : "#fff";
-  document.querySelectorAll(".menu-button").forEach((button) => {
+  document.querySelectorAll(".menu__button").forEach((button) => {
     button.querySelectorAll("[stroke]").forEach((vector) => {
       vector.setAttribute("stroke", color);
     });
@@ -82,15 +86,15 @@ const landingPageObserve = () => {
   const landingPageOptions = {
     rootMargin: "-70px 0px 0px 0px",
   };
-  const header = document.querySelector("header");
+  const nav = document.querySelector("nav");
 
-  landingObserver = new IntersectionObserver((entries, landingObserver) => {
+  landingObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) {
-        header.classList.add("nav-scrolled");
+        nav.classList.add("nav--scrolled");
         changeMenuButton(true);
       } else {
-        header.classList.remove("nav-scrolled");
+        nav.classList.remove("nav--scrolled");
         changeMenuButton(false);
       }
     });
@@ -98,7 +102,6 @@ const landingPageObserve = () => {
 
   landingObserver.observe(landingPage);
 };
-
 
 window.onresize = handleWindowSize;
 landingPageObserve();

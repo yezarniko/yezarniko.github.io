@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>yznk</title>
     <link rel="icon" href="fav.svg" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
         <div class="menu">
-          <div class="top-bar">
-            <a href="#landing-page"><h2 class="logo">Yezarniko</h2></a>
+          <div class="menu__top-bar">
+            <a href="#landing-page"><h2 class="menu__logo">Yezarniko</h2></a>
             <span
-              class="menu-collapse"
+              class="menu__collapse"
               onmouseenter="handleMenu(true)"
               onclick="handleOnClick()"
             >
               <svg
                 id="open-menu"
-                class="menu-button"
+                class="menu__button"
                 width="35"
                 height="15"
                 viewBox="0 0 49 20"
@@ -48,7 +48,7 @@
               </svg>
               <svg
                 id="close-menu"
-                class="menu-button"
+                class="menu__button"
                 width="25"
                 height="25"
                 viewBox="0 0 29 28"
@@ -73,7 +73,7 @@
             </span>
           </div>
 
-          <ul class="menu-expand">
+          <ul class="menu__expand">
             <li><a href="#intro-page">skills</a></li>
             <li><a href="#">projects</a></li>
             <li><a href="#">contact me</a></li>

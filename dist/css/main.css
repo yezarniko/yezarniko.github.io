@@ -1,0 +1,165 @@
+:root {
+  --pinky: rgb(184, 160, 223);
+  --codewar: #b1361e;
+  --shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  letter-spacing: 0.15em;
+}
+body a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container section {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+nav {
+  --nav-z-index: 999;
+  --nav-fontsize: $calc(0.5rem + 1.2vh);
+  --logo-color: #fff;
+  --nav-text-color: #fff;
+  --nav-text-hover-color: var(--pinky);
+  --nav-background: transparent;
+  --about-me-color: rgba(121, 57, 122, 1);
+  --about-me-background: #fff;
+  --about-me-background-hover: rgb(37, 37, 37);
+  background: var(--nav-background);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1.1em 0;
+  z-index: var(--nav-z-index);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+nav .menu {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  padding: 0 1.5em;
+}
+@media (min-width: 961px) {
+  nav .menu {
+    flex-direction: row;
+  }
+}
+nav .menu__top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+nav .menu__logo {
+  color: var(--logo-color);
+  font-size: 0.8rem;
+}
+@media (min-width: 961px) {
+  nav .menu__logo {
+    font-size: calc(0.8rem + 0.2vw);
+  }
+}
+nav .menu__expand {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  list-style: none;
+}
+@media (min-width: 961px) {
+  nav .menu__expand {
+    display: flex;
+    flex-direction: row;
+    max-width: 60%;
+  }
+}
+@media (min-width: 1147px) {
+  nav .menu__expand {
+    max-width: 500px;
+  }
+}
+nav .menu__expand li {
+  margin-top: 1.5em;
+}
+@media (min-width: 961px) {
+  nav .menu__expand li {
+    margin-top: 0;
+  }
+}
+nav .menu__expand li.about-me {
+  margin-top: 2em;
+}
+@media (min-width: 961px) {
+  nav .menu__expand li.about-me {
+    margin-top: 0;
+  }
+}
+nav .menu__expand li.about-me a {
+  background: var(--about-me-background);
+  color: var(--about-me-color);
+  padding: 0.6em;
+  border-radius: 1em;
+  box-shadow: var(--shadow);
+}
+nav .menu__expand li.about-me a:hover {
+  background: var(--about-me-background-hover);
+}
+nav .menu__expand li a {
+  color: var(--nav-text-color);
+  font-size: var(--nav-fontsize);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+nav .menu__expand li a:hover {
+  color: var(--nav-text-hover-color);
+  text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4), -3px 10px 12px rgba(0, 0, 0, 0.2);
+}
+nav .menu__collapse #open-menu {
+  display: inline;
+}
+nav .menu__collapse #close-menu {
+  display: none;
+}
+@media (min-width: 961px) {
+  nav .menu__collapse {
+    display: none;
+  }
+}
+
+.nav--scrolled {
+  --nav-text-color: #79397a;
+  --nav-text-hover-color: var(--codewar);
+  --nav-background: #fff;
+  --logo-color: #1f3f45;
+  --about-me-color: #fff;
+  --about-me-background: var(--codewar);
+  --about-me-background-hover: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */

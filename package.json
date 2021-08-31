@@ -1,9 +1,11 @@
 {
-  "name": "profilo",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
+    "sass-watch": "sass --watch sass:dist/css",
+    "sass-compile": "sass sass:dist/css",
     "deploy": "gh-pages -d dist"
   },
   "author": "yezarniko",

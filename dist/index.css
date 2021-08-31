@@ -4,7 +4,7 @@
 
 :root {
   --pinky: rgb(184, 160, 223);
-  --codewar: #B1361E;
+  --codewar: #b1361e;
   --shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
 }
 
@@ -22,7 +22,7 @@ header {
   --nav-background: transparent;
   --about-me-color: rgba(121, 57, 122, 1);
   --about-me-background: #fff;
-  --about-me-background-hover:rgb(37, 37, 37);
+  --about-me-background-hover: rgb(37, 37, 37);
 }
 
 .landing {
@@ -67,10 +67,10 @@ header {
 }
 
 .nav-scrolled {
-  --nav-text-color: #79397A;
+  --nav-text-color: #79397a;
   --nav-text-hover-color: var(--codewar);
   --nav-background: #fff;
-  --logo-color: #1F3F45;
+  --logo-color: #1f3f45;
   --about-me-color: #fff;
   --about-me-background: var(--codewar);
   --about-me-background-hover: rgb(255, 255, 255);
@@ -87,7 +87,7 @@ a {
 .menu-expand a:hover {
   color: var(--nav-text-hover-color);
   text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4),
-              -3px 10px 12px rgba(0, 0, 0, 0.2);
+    -3px 10px 12px rgba(0, 0, 0, 0.2);
 }
 
 .menu-expand a {
@@ -96,8 +96,6 @@ a {
   font-weight: 500;
   letter-spacing: 0.1em;
 }
-
-
 
 .about-me a {
   background: var(--about-me-background);
@@ -176,8 +174,8 @@ nav {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .container::-webkit-scrollbar {
@@ -209,8 +207,11 @@ section {
   justify-content: space-around;
 }
 
+
+
 .feature-text h1 {
   padding: 0.5em;
+  margin-bottom: 2em;
 }
 
 .feature-img {
@@ -224,7 +225,8 @@ section {
 }
 
 #side-img {
-  height: 80%;
+  height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 961px) {
@@ -235,7 +237,7 @@ section {
   .menu-expand {
     display: flex;
     flex-direction: row;
-    max-width: 42%;
+    max-width: 60%;
   }
 
   .menu-expand li,
@@ -255,18 +257,31 @@ section {
     flex-direction: row;
   }
 
+  .feature-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } 
+
   .feature-text h1 {
+    margin-bottom: 4em;
     text-align: start;
-    margin-bottom: 5em;
   }
 
   .feature-img {
     flex-direction: row;
   }
+  
+  #side-img {
+    width: 80%;
+  }
 }
 
 @media (min-width: 1147px) {
   .menu-expand {
-    max-width: 36%;
+    max-width: 500px;
   }
 }
