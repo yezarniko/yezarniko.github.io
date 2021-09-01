@@ -50,3 +50,9 @@ $breakpoints: (
 
 
 @import "./nav";
+@import 
+  "./pages/landing",
+  "./pages/intro",
+  "./pages/skills",
+  "./pages/projects",
+  "./pages/about-me";
