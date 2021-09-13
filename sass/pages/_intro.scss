@@ -3,9 +3,9 @@
   top: 0;
 }
 
-
 .intro {
   position: relative;
+  background: #fff;
   &__big_polygon {
     background: linear-gradient(
       260.77deg,
@@ -19,38 +19,69 @@
     }
   }
   &__small_polygon {
-    background-color: #202020;
-    clip-path: polygon(0 87.5%, 100% 73%, 100% 100%, 0 100%);
-    @include media(">=desktop"){
-      clip-path: polygon(32.2% 87.5%, 100% 68%, 100% 100%, 38% 100%);
-    }
     @include showAtTop;
+    background-color: #202020;
+    clip-path: polygon(0 87.5%, 100% 70%, 100% 100%, 0 100%);
+    @include media(">=desktop") {
+      clip-path: polygon(32.2% 87.5%, 100% 67%, 100% 100%, 38% 100%);
+    }
     @include fullwh;
     overflow: hidden;
 
     &::after {
       content: "";
       background-color: #282727;
-      clip-path: polygon(0 87.5%, 100% 73%, 100% 100%, 0 100%);
+      clip-path: polygon(0 87.5%, 100% 70%, 100% 100%, 0 100%);
       @include showAtTop;
       width: 101%;
       height: 101vh;
       left: 10px;
+      overflow: hidden;
       @include media(">=desktop") {
-        clip-path: polygon(32.2% 87.5%, 100% 68%, 100% 100%, 38% 100%);
+        clip-path: polygon(32.2% 87.5%, 100% 67%, 100% 100%, 38% 100%);
       }
     }
   }
 
   &__card {
+    @include showAtTop;
     width: calc(15em + 5vw + 1vh);
     height: calc(12em + 5vw + 1vh);
     box-shadow: var(--shadow);
     background: white;
-    @include showAtTop;
+    border-radius: 50px;
+    top: 50%;
     right: 0;
-    margin-right: 2em;
-    border-radius: 53px;
-    top: calc(10rem - 1vw + 7vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.2em;
+    transform: translate(-4%, -60%);
+    @include media(">=desktop") {
+      transform: translate(-4%, -70%);
+    }
+
+    h1 {
+      font-size: calc(1.3rem + 0.2vw);
+    }
+
+    p {
+      margin-top: 1.4em;
+      font-family: "Ubuntu";
+      font-size: calc(1.1rem + 0.2vw);
+      line-height: calc(30px + 0.2vw);
+    }
+  }
+
+  &__footer {
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(13.5vh + 6vw);
+    margin-bottom: 0.5em;
+    @include media(">=desktop") {
+      height: 25vh;
+    }
   }
 }

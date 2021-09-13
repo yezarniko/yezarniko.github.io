@@ -104,27 +104,29 @@ const landingPageObserve = () => {
 };
 
 const toggleFullscreen = () => {
-  if(window.innerHeight !== screen.height) {
-    body = document.querySelector('body');
+  if (window.innerHeight !== screen.height) {
+    body = document.querySelector("body");
     body.requestFullscreen();
     body.webkitRequestFullscreen();
-
   } else {
     document.exitFullscreen();
     document.webkitExitFullscreen();
   }
-}
+};
 
 const hideIntroMessage = () => {
   document.querySelector(".introMessage").style.display = "none";
-  localStorage.setItem('notFirstTime', 'true');
-}
+  localStorage.setItem("notFirstTime", "true");
+};
 
 const showMessageDialog = () => {
-  if(localStorage.getItem('notFirstTime') === 'true' || window.innerWidth >= MINWIDTH) {
+  if (
+    localStorage.getItem("notFirstTime") === "true" ||
+    window.innerWidth >= MINWIDTH
+  ) {
     document.querySelector(".introMessage").style.display = "none";
   }
-}
+};
 
 showMessageDialog();
 window.onresize = handleWindowSize;
