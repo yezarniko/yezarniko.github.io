@@ -1,0 +1,37 @@
+section.skills {
+  height: 200vh;
+}
+
+@mixin edu_card {
+  box-shadow: var(--shadow);
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.skills {
+  position: relative;
+  scroll-margin-bottom: 20rem;
+
+  &__edu {
+    background: #fff;
+    @include edu_card;
+    top: 20%;
+    left: 50%;
+    z-index: 2;
+  }
+
+  &__edu_shadow {
+    background: linear-gradient(
+      260.77deg,
+      rgba(5, 5, 5, 0.91) 3.67%,
+      rgba(77, 18, 82, 0.91) 25.52%,
+      rgba(20, 122, 136, 0.91) 60.71%,
+      rgba(9, 9, 9, 0.950345) 85.59%
+    );
+    @include edu_card;
+    top: 22%;
+    left: 52%;
+  }
+}
