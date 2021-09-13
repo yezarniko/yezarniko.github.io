@@ -369,7 +369,7 @@ nav .menu__collapse #close-menu {
   bottom: 0;
   right: 0;
   height: calc(13.5vh + 6vw);
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em;
 }
 @media (min-width: 961px) {
   .intro__footer {
