@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Ye Zar Ni Ko,ye zar ni ko,yezarniko,Portfolio,Programmer"/>
+    <meta
+      name="keywords"
+      content="Ye Zar Ni Ko,ye zar ni ko,yezarniko,Portfolio,Programmer"
+    />
     <title>yznk</title>
     <link rel="icon" href="fav.svg" />
     <link rel="stylesheet" href="css/main.css" />
@@ -15,7 +18,7 @@
       <nav>
         <div class="menu">
           <div class="menu__top-bar">
-            <a href="#landing-page"><h2 class="menu__logo">Yezarniko</h2></a>
+            <a href="#landing-page"><h2 class="menu__logo disable-select">Yezarniko</h2></a>
             <span
               class="menu__collapse"
               onmouseenter="handleMenu(true)"
@@ -83,7 +86,11 @@
         </div>
       </nav>
     </header>
-    <main class="container" onscroll="handleScroll()">
+    <div class="introMessage disable-select" onclick="">
+      Double click the screen for better resolution
+      <div class="btn" onclick="hideIntroMessage()">ok</div>
+    </div>
+    <main class="container" onscroll="handleScroll()" ondblclick="toggleFullscreen()">
       <section class="landing" id="landing-page">
         <main class="landing__main">
           <div class="landing__feature-text">
@@ -807,10 +814,16 @@
       >
         <p>HI</p>
       </section>
-      <section class="intro long" style="background-color: cornflowerblue; scroll-margin-bottom: 20rem;">
+      <section
+        class="intro long"
+        style="background-color: cornflowerblue; scroll-margin-bottom: 20rem"
+      >
         <p>HI</p>
       </section>
-      <section class="intro t" style="background-color: cadetblue; scroll-margin-top: 20px;">
+      <section
+        class="intro t"
+        style="background-color: cadetblue; scroll-margin-top: 20px"
+      >
         <p>HI</p>
       </section>
       <section class="intro long" style="background-color: coral">

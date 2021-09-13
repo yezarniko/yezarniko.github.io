@@ -38,6 +38,50 @@ body a {
   scroll-snap-align: start;
 }
 
+.disable-select {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+.introMessage {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  box-shadow: var(--shadow);
+  top: 30%;
+  z-index: 999;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+}
+@media (min-width: 961px) {
+  .introMessage {
+    display: none;
+  }
+}
+
+.btn {
+  color: #79397a;
+  background: #252525;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
 nav {
   --nav-z-index: 999;
   --nav-fontsize: $calc(0.5rem + 1.2vh);
@@ -242,6 +286,62 @@ nav .menu__collapse #close-menu {
   .landing__feature-img #side-img {
     width: 80%;
   }
+}
+
+.intro {
+  position: relative;
+}
+.intro__big_polygon {
+  background: linear-gradient(260.77deg, #307772 2.95%, rgba(57, 48, 58, 0.91) 119.45%);
+  clip-path: polygon(100% 10%, 100% 80%, 0 96%, 0 34%);
+  widht: 100%;
+  height: 100vh;
+}
+@media (min-width: 961px) {
+  .intro__big_polygon {
+    clip-path: polygon(100% 10%, 100% 70%, 0 96%, 0 34%);
+  }
+}
+.intro__small_polygon {
+  background-color: #202020;
+  clip-path: polygon(0 87.5%, 100% 73%, 100% 100%, 0 100%);
+  position: absolute;
+  top: 0;
+  widht: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (min-width: 961px) {
+  .intro__small_polygon {
+    clip-path: polygon(32.2% 87.5%, 100% 68%, 100% 100%, 38% 100%);
+  }
+}
+.intro__small_polygon::after {
+  content: "";
+  background-color: #282727;
+  clip-path: polygon(0 87.5%, 100% 73%, 100% 100%, 0 100%);
+  position: absolute;
+  top: 0;
+  width: 101%;
+  height: 101vh;
+  left: 10px;
+}
+@media (min-width: 961px) {
+  .intro__small_polygon::after {
+    clip-path: polygon(32.2% 87.5%, 100% 68%, 100% 100%, 38% 100%);
+  }
+}
+.intro__card {
+  width: calc(15em + 5vw + 1vh);
+  height: calc(12em + 5vw + 1vh);
+  box-shadow: var(--shadow);
+  background: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 2em;
+  border-radius: 53px;
+  top: calc(10rem - 1vw + 7vh);
 }
 
 /*# sourceMappingURL=main.css.map */
