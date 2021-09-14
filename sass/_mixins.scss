@@ -1,0 +1,15 @@
+@mixin fullwh {
+  width: 100%;
+  height: 100vh;
+}
+
+@mixin showAtTop {
+  position: absolute;
+  top: 0;
+}
+
+@mixin border-gradient($gradient) {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: $gradient;
+}
