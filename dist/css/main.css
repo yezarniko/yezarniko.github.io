@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Coda");
 :root {
   --pinky: rgb(184, 160, 223);
   --codewar: #b1361e;
@@ -33,7 +34,7 @@ body a {
   display: none;
 }
 .container section {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   scroll-snap-align: start;
 }
@@ -337,7 +338,6 @@ nav .menu__collapse #close-menu {
   position: absolute;
   top: 0;
   width: calc(15em + 5vw + 1vh);
-  height: calc(12em + 5vw + 1vh);
   box-shadow: var(--shadow);
   background: white;
   border-radius: 50px;
@@ -356,9 +356,10 @@ nav .menu__collapse #close-menu {
 }
 .intro__card h1 {
   font-size: calc(1.3rem + 0.2vw);
+  margin-top: 1.2em;
 }
 .intro__card p {
-  margin-top: 1.4em;
+  margin: 1.4em 0;
   font-family: "Ubuntu";
   font-size: calc(1.1rem + 0.2vw);
   line-height: calc(30px + 0.2vw);
@@ -378,33 +379,158 @@ nav .menu__collapse #close-menu {
 }
 
 section.skills {
-  height: 200vh;
+  height: auto;
 }
 
 .skills {
-  position: relative;
   scroll-margin-bottom: 20rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills__edu_card {
+  background: linear-gradient(260.77deg, rgba(5, 5, 5, 0.91) 3.67%, rgba(77, 18, 82, 0.91) 25.52%, rgba(20, 122, 136, 0.91) 60.71%, rgba(9, 9, 9, 0.950345) 85.59%);
+  width: 32ch;
+  margin-top: 8em;
+  padding-bottom: 0.5em;
 }
 .skills__edu {
   background: #fff;
   box-shadow: var(--shadow);
-  width: 300px;
-  height: 250px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 20%;
-  left: 50%;
-  z-index: 2;
+  width: 97%;
+  height: 95%;
+  padding: 0.2em;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, #0da4ad 0%, rgba(0, 1, 0, 0.6) 90%);
+  text-align: center;
+  font-size: 0.94rem;
+  font-weight: 400;
 }
-.skills__edu_shadow {
-  background: linear-gradient(260.77deg, rgba(5, 5, 5, 0.91) 3.67%, rgba(77, 18, 82, 0.91) 25.52%, rgba(20, 122, 136, 0.91) 60.71%, rgba(9, 9, 9, 0.950345) 85.59%);
-  box-shadow: var(--shadow);
-  width: 300px;
-  height: 250px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 22%;
-  left: 52%;
+.skills__edu h2 {
+  font-size: 1.1rem;
+  margin-top: 2em;
+}
+.skills__edu p {
+  margin-bottom: 3em;
+}
+.skills__edu .line {
+  width: 50%;
+  height: 1px;
+  background: #000;
+  margin: 2em auto;
+  margin-top: 0;
+}
+@media (min-width: 961px) {
+  .skills__edu {
+    font-size: 1rem;
+  }
+}
+.skills__line_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.skills__line {
+  height: 200px;
+  width: 2px;
+  margin-top: 2em;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+}
+.skills__line_title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-family: "Coda";
+  margin-top: 1em;
+}
+.skills__card {
+  background: #f5f0f4;
+  color: #414244;
+  font-family: "Lato";
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.skills__card h3 {
+  color: #413331;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 2em;
+  margin-bottom: 0.2em;
+}
+.skills__card .line {
+  height: 2px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+.skills__card__box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 1.4em 0.5em;
+}
+.skills__card_inside_card {
+  background: #fff;
+  line-height: 1.2em;
+  border-radius: 10px;
+}
+.skills__card_inside_card p {
+  margin: 1em;
+  max-width: 410px;
+  min-height: 138px;
+}
+.skills__ps_card {
+  border-color: var(--codewar);
+}
+.skills__ps_card .line {
+  width: 17ch;
+  background: var(--codewar);
+}
+.skills__ps_card__highlight {
+  color: var(--codewar);
+}
+.skills__ps_card__logo {
+  margin-left: 1em;
+}
+.skills__pd_card {
+  border-color: #19b5f5;
+}
+.skills__pd_card .line {
+  width: 25ch;
+  background: #a259ff;
+}
+.skills__pd_card__highlight {
+  color: #a259ff;
+}
+.skills__pd_card__box {
+  flex-direction: row-reverse;
+}
+.skills__pd_card__logo {
+  margin-bottom: 2em;
+  margin-right: 1em;
+}
+.skills__ps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 5em;
+  width: 95%;
+}
+.skills__pd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 5em;
+  width: 95%;
+  flex-direction: row-reverse;
+  margin-bottom: 5em;
 }
 
 /*# sourceMappingURL=main.css.map */
