@@ -1,5 +1,5 @@
 // @import url("https://fonts.googleapis.com/css2?family=Coda&family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Coda");
+@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
 
 :root {
   --pinky: rgb(184, 160, 223);
@@ -91,5 +91,5 @@ body {
 }
 
 @import "./nav";
-@import "./pages/landing", "./pages/intro", "./pages/skills", "./pages/projects",
+@import "./pages/intro", "./pages/skills", "./pages/projects",
   "./pages/about-me";

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coda");
+@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
 :root {
   --pinky: rgb(184, 160, 223);
   --codewar: #b1361e;
@@ -205,88 +205,6 @@ nav .menu__collapse #close-menu {
   --about-me-color: #fff;
   --about-me-background: var(--codewar);
   --about-me-background-hover: #fff;
-}
-
-.landing {
-  background: linear-gradient(180deg, rgba(53, 87, 75, 0.75) 0%, rgba(51, 74, 86, 0.96) 42.37%, rgba(38, 24, 40, 0.981485) 86.98%, #000000 100%);
-  display: flex;
-  align-items: flex-end;
-}
-.landing__main {
-  height: 85vh;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  justify-content: space-around;
-}
-@media (min-width: 961px) {
-  .landing__main {
-    flex-direction: row;
-  }
-}
-@media (min-width: 961px) {
-  .landing__feature-text {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-.landing__feature-text h1 {
-  font-family: "Poppins";
-  color: #ccdaca;
-  font-size: calc(1.3rem + 2vw);
-  text-align: center;
-  font-weight: 700;
-  line-height: 1.6em;
-  letter-spacing: 0.2em;
-  padding: 0.5em;
-  margin-bottom: 2em;
-}
-@media (min-width: 961px) {
-  .landing__feature-text h1 {
-    margin-bottom: 4em;
-    text-align: start;
-  }
-}
-.landing__feature-text .color-programmer {
-  color: #a975ff;
-}
-.landing__feature-text .color-love {
-  color: #fc52ff;
-}
-.landing__feature-text .color-quality {
-  color: #a259ff;
-}
-.landing__feature-text .color-codes {
-  color: rgba(85, 181, 146, 0.87);
-}
-.landing__feature-img {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  overflow: hidden;
-}
-@media (min-width: 961px) {
-  .landing__feature-img {
-    flex-direction: row;
-  }
-}
-.landing__feature-img #side-img {
-  height: 100%;
-  width: 100%;
-}
-@media (min-width: 961px) {
-  .landing__feature-img #side-img {
-    width: 80%;
-  }
 }
 
 .intro {
@@ -604,7 +522,7 @@ section.skills {
   transform: translate(0%, 22%);
 }
 .skills__pd__card__highlight {
-  color: #a259ff;
+  color: #7d26ee;
 }
 .skills__pd__card__box {
   flex-direction: row-reverse;
