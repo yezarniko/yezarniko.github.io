@@ -489,6 +489,8 @@ section.skills {
   background: #fff;
   line-height: 1.2em;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 .skills__card_inside_card p {
   margin: 1em;
@@ -589,6 +591,9 @@ section.skills {
 .skills__pd__card .line {
   width: 21ch;
   background: #a259ff;
+}
+.skills__pd__card_inside_card p {
+  transform: translate(0%, 22%);
 }
 .skills__pd__card__highlight {
   color: #a259ff;
