@@ -121,6 +121,9 @@ section.skills {
       background: #fff;
       line-height: 1.2em;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      // padding: 1em;
       p {
         margin: 1em;
         max-width: 410px;
@@ -144,6 +147,14 @@ section.skills {
       .line {
         width: 15ch;
         background: var(--codewar);
+      }
+      &_inside_card {
+        p {
+          transform: translate(0%, 15%);
+          @include media(">=desktop") {
+            transform: translate(0%, 5%);
+          }
+        }
       }
       &__highlight {
         color: var(--codewar);
@@ -188,6 +199,11 @@ section.skills {
         width: 21ch;
         background: #a259ff;
       }
+      &_inside_card {
+        p {
+          transform: translate(0%, 22%);
+        }
+      }
       &__highlight {
         color: #a259ff;
       }
@@ -198,7 +214,7 @@ section.skills {
         margin-bottom: 2em;
         margin-right: 1em;
         @include media("<desktop") {
-          margin-bottom: 5em;
+          margin-bottom: 3.5em;
         }
       }
     }
