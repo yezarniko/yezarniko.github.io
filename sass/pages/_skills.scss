@@ -45,6 +45,8 @@ section.skills {
     }
     p {
       margin-bottom: 3em;
+      line-height: 1.7em;
+      letter-spacing: 1.5px;
     }
     .line {
       width: 50%;
@@ -83,7 +85,14 @@ section.skills {
     background: #f5f0f4;
     color: #414244;
     font-family: "Lato";
-    font-size: 1.2rem;
+    font-size: calc(0.8rem + 0.5vw);
+    letter-spacing: 0.2px;
+    @include media("<=402px") {
+      width: 95%;
+    }
+    @include media(">=desktop") {
+      letter-spacing: 1px;
+    }
     font-weight: 400;
     border: 1px solid;
     border-radius: 10px;
@@ -91,8 +100,8 @@ section.skills {
     h3 {
       color: #413331;
       text-align: center;
-      font-size: 1.3rem;
-      margin-top: 2em;
+      font-size: calc(1rem + 0.2vw);
+      margin-top: 1.5em;
       margin-bottom: 0.2em;
     }
 
@@ -106,7 +115,7 @@ section.skills {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin: 1.4em 0.5em;
+      margin: 1.4em calc(0.5em + 0.5vw);
     }
     &_inside_card {
       background: #fff;
@@ -117,49 +126,88 @@ section.skills {
         max-width: 410px;
         min-height: 138px;
       }
-    }
-  }
-
-  &__ps_card {
-    border-color: var(--codewar);
-    .line {
-      width: 17ch;
-      background: var(--codewar);
-    }
-    &__highlight {
-      color: var(--codewar);
-    }
-
-    &__logo {
-      margin-left: 1em;
-    }
-  }
-
-  &__pd_card {
-    border-color: #19b5f5;
-    .line {
-      width: 25ch;
-      background: #a259ff;
-    }
-    &__highlight {
-      color: #a259ff;
-    }
-    &__box {
-      flex-direction: row-reverse;
-    }
-    &__logo {
-      margin-bottom: 2em;
-      margin-right: 1em;
+      #rank {
+        width: 5.2ch;
+        transform: translate(0%, 30%);
+      }
     }
   }
 
   &__ps {
     @include card_and_brain;
+    margin-top: 9em;
+    &__card {
+      border-color: var(--codewar);
+      @include media(">=desktop") {
+        margin-left: 2%;
+      }
+      .line {
+        width: 15ch;
+        background: var(--codewar);
+      }
+      &__highlight {
+        color: var(--codewar);
+      }
+
+      &__logo {
+        margin-left: 1em;
+      }
+    }
+    &__brain {
+      display: none;
+      @include media(">=desktop") {
+        margin-right: 12%;
+        display: block;
+      }
+    }
+
+    &__perfect_brain {
+      @include media(">=desktop") {
+        display: none;
+      }
+      margin: 20vh auto;
+    }
   }
 
   &__pd {
     @include card_and_brain;
-    flex-direction: row-reverse;
+    margin-top: 0;
+    flex-direction: column-reverse;
+    @include media(">=desktop") {
+      margin-top: 9em;
+      flex-direction: row-reverse;
+    }
     margin-bottom: 5em;
+
+    &__card {
+      border-color: #19b5f5;
+      @include media(">=desktop") {
+        margin-left: 2%;
+      }
+      .line {
+        width: 21ch;
+        background: #a259ff;
+      }
+      &__highlight {
+        color: #a259ff;
+      }
+      &__box {
+        flex-direction: row-reverse;
+      }
+      &__logo {
+        margin-bottom: 2em;
+        margin-right: 1em;
+        @include media("<desktop") {
+          margin-bottom: 5em;
+        }
+      }
+    }
+    &__brain {
+      display: none;
+      @include media(">=desktop") {
+        display: block;
+        margin-left: 12%;
+      }
+    }
   }
 }
