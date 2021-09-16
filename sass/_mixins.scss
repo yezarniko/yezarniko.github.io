@@ -16,10 +16,14 @@
 
 @mixin card_and_brain {
   display: flex;
-  flex-direction: column;
+  @include media("<desktop") {
+    flex-direction: column;
+  }
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
-  margin-top: 5em;
   width: 95%;
+  @include media("<desktop") {
+    width: 100%;
+  }
 }
