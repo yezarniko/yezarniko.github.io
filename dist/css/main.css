@@ -546,4 +546,32 @@ section.skills {
   }
 }
 
+.cs_skills {
+  scroll-margin-top: 20px;
+  background: #ffff;
+  position: relative;
+}
+
+.bubble {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+.bubble__indigo {
+  background: linear-gradient(180deg, rgba(221, 173, 222, 0.95) 0%, rgba(196, 196, 196, 0) 100%);
+  transform: rotate(180deg);
+  right: 0;
+}
+.bubble__yellow {
+  background: linear-gradient(180deg, rgba(247, 223, 30, 0.57) 0%, #c4c4c400 100%);
+  top: 20%;
+}
+.bubble__pink {
+  background: linear-gradient(180deg, rgba(255, 0, 125, 0.34) 0%, rgba(173, 82, 126, 0) 100%);
+  top: 50%;
+  right: 20%;
+}
+
 /*# sourceMappingURL=main.css.map */
