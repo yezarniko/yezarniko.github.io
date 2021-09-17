@@ -1,5 +1,5 @@
 const MINWIDTH = 961;
-const codewarColor = getStyleVar("--codewar");
+const codewarColor = '#b1361e';
 
 function getStyleVar(name) {
   return window
