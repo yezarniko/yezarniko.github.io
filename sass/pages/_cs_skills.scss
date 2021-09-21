@@ -1,25 +1,20 @@
 .cs_skills {
-  scroll-margin-bottom: 5rem;
+  scroll-margin-bottom: 50vh;
   scroll-margin-top: 20px;
-  background: #ffff;
-  position: relative;
+  background: rgb(255, 255, 255);
   min-height: 100vh;
 
   &__title {
-    text-align: center;
-    position: absolute;
-    top: calc(180px - 10vh);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    letter-spacing: 4px;
-    z-index: 2;
+    @include section_header(calc(180px - 10vh));
   }
 
   &__box {
     padding-top: 11em;
     z-index: 2;
     width: 100%;
+    max-width: 1180px;
     @include media(">=desktop") {
+      padding-top: 30vh;
       width: 95%;
     }
     margin: 0 auto;
@@ -45,15 +40,15 @@
         }
       }
     }
-    &__skill_type { 
+    &__skill_type {
       display: flex;
       flex-direction: row;
       align-items: flex-end;
       @include media(">=desktop") {
         flex-direction: column;
-      align-items: flex-start;
+        align-items: flex-start;
       }
-      
+
       &__data {
         display: flex;
         flex-direction: column;
@@ -80,10 +75,10 @@
           }
         }
         &__title {
-          font-size: calc(.9em + .2vw);
+          font-size: calc(0.9em + 0.2vw);
           text-align: center;
           font-weight: 600;
-          letter-spacing: .2px;
+          letter-spacing: 0.2px;
         }
       }
     }
@@ -91,12 +86,12 @@
 }
 
 .bubble {
-    width: calc(100px + 5vw);
-    height: calc(100px + 5vw);
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    z-index: 1;
+  width: calc(100px + 5vw);
+  height: calc(100px + 5vw);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 
   &__indigo {
     background: linear-gradient(

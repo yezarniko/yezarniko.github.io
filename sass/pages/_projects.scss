@@ -1,0 +1,128 @@
+.projects {
+  padding-top: 11rem;
+  scroll-margin-bottom: 100vh;
+  background: #fff;
+  &__header {
+    @include section_header(calc(180px - 10vh));
+  }
+
+  &__warp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1080px;
+    margin: 3em auto;
+    &__project {
+      background: #fff;
+      box-shadow: var(--shadow);
+      width: 300px;
+      height: 350px;
+      @include media("<desktop") {
+        margin-bottom: 3em;
+      }
+
+      &__thumbnail {
+        width: 100%;
+        height: 60%;
+        background: linear-gradient(
+          202.92deg,
+          rgba(31, 144, 180, 0.17) 32.6%,
+          rgba(243, 28, 183, 0.42) 90.43%
+        );
+      }
+      &__info_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.5em 1em;
+        width: 100%;
+        height: 40%;
+        &__title {
+          text-align: center;
+          color: rgb(36, 34, 34);
+          font-weight: 700;
+        }
+        &__btn {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &__view {
+            @include flex-center(column);
+            margin-right: 10px;
+            svg {
+              width: 30px;
+              height: 40px;
+            }
+            a {
+              font-weight: 600;
+              color: var(--codewar);
+            }
+            &:hover {
+              svg {
+                width: 40px;
+              }
+              a {
+                font-weight: 700;
+              }
+            }
+          }
+
+          &__source {
+            @include flex-center(column);
+            svg {
+              width: 30px;
+              height: 40px;
+            }
+            a {
+              font-weight: 600;
+              color: #1a4674;
+            }
+            &:hover {
+              svg {
+                width: 40px;
+              }
+              a {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-hidden {
+      @include media("<desktop") {
+        display: none;
+      }
+    }
+    &-last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__more_btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 300px;
+    margin: 0 auto;
+    svg {
+      height: 32px;
+    }
+    @include media(">=desktop") {
+     display: none; 
+    }
+  }
+}
