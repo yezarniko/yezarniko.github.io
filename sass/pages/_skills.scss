@@ -1,9 +1,5 @@
-section.skills {
-  height: auto;
-}
-
 .skills {
-  scroll-margin-bottom: 20rem;
+  scroll-margin-bottom: 25rem;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -100,7 +96,6 @@ section.skills {
     h3 {
       color: #413331;
       text-align: center;
-      font-size: calc(1rem + 0.2vw);
       margin-top: 1.5em;
       margin-bottom: 0.2em;
     }
@@ -123,7 +118,6 @@ section.skills {
       border-radius: 10px;
       display: flex;
       align-items: center;
-      // padding: 1em;
       p {
         margin: 1em;
         max-width: 410px;
@@ -145,7 +139,7 @@ section.skills {
         margin-left: 2%;
       }
       .line {
-        width: 15ch;
+        width: 10em;
         background: var(--codewar);
       }
       &_inside_card {
@@ -184,11 +178,12 @@ section.skills {
     @include card_and_brain;
     margin-top: 0;
     flex-direction: column-reverse;
+    margin-bottom: 15vh;
     @include media(">=desktop") {
       margin-top: 9em;
+      margin-bottom: 30vh;
       flex-direction: row-reverse;
     }
-    margin-bottom: 5em;
 
     &__card {
       border-color: #19b5f5;
@@ -196,7 +191,7 @@ section.skills {
         margin-left: 2%;
       }
       .line {
-        width: 21ch;
+        width: 14em;
         background: #a259ff;
       }
       &_inside_card {
