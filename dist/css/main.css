@@ -33,6 +33,9 @@ body {
 body a {
   text-decoration: none;
 }
+body ul {
+  list-style: none;
+}
 
 .container {
   width: 100%;
@@ -708,7 +711,7 @@ nav .menu__collapse #close-menu {
 
 .projects {
   padding-top: 11rem;
-  scroll-margin-bottom: 100vh;
+  scroll-margin-bottom: 500vh;
   background: #fff;
 }
 .projects__header {
@@ -723,19 +726,20 @@ nav .menu__collapse #close-menu {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 95%;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 .projects__box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
-  max-width: 1080px;
-  margin: 3em auto;
 }
 @media (min-width: 961px) {
   .projects__box {
     flex-direction: row;
+    margin-bottom: 3em;
   }
 }
 .projects__box__project {
@@ -813,13 +817,8 @@ nav .menu__collapse #close-menu {
 .projects__box__project__info_card__btn__source:hover a {
   font-weight: 700;
 }
-@media (max-width: 960px) {
-  .projects__box-hidden {
-    display: none;
-  }
-}
-.projects__box-last {
-  margin-bottom: 0;
+.projects__box-hidden {
+  display: none;
 }
 .projects__more_btn {
   display: flex;
@@ -828,13 +827,154 @@ nav .menu__collapse #close-menu {
   width: 300px;
   margin: 0 auto;
 }
-.projects__more_btn svg {
-  height: 32px;
-}
 @media (min-width: 961px) {
   .projects__more_btn {
-    display: none;
+    width: 100%;
   }
+}
+.projects__more_btn svg {
+  height: 25px;
+}
+.projects__more_btn-hidden {
+  display: none;
+}
+.projects .contactMe {
+  width: 100%;
+}
+.projects .contactMe h3 {
+  position: relative;
+  text-align: center;
+  margin: 5em 0 5em 0;
+}
+.projects .contactMe__card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: var(--shadow);
+  padding: 1em 0;
+  margin-bottom: 12em;
+}
+@media (min-width: 961px) {
+  .projects .contactMe__card {
+    align-items: center;
+  }
+}
+.projects .contactMe__card__message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 174px;
+  max-height: 202px;
+  margin-left: 10em;
+}
+@media (max-width: 607px) {
+  .projects .contactMe__card__message {
+    margin-left: 0;
+  }
+  .projects .contactMe__card__message svg {
+    width: 40px;
+  }
+}
+.projects .contactMe__card p {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0.5em;
+  font-size: 1rem;
+  line-height: 2em;
+}
+@media (max-width: 607px) {
+  .projects .contactMe__card p {
+    font-size: 0.5rem;
+  }
+}
+.projects .contactMe__card__info {
+  display: flex;
+  flex-direction: column;
+}
+.projects .contactMe__card__info__item {
+  display: flex;
+  align-items: center;
+  margin: 1em 2em;
+}
+@media (max-width: 607px) {
+  .projects .contactMe__card__info__item {
+    margin: 1em;
+  }
+}
+.projects .contactMe__card__info__item svg {
+  margin: 0 0.5em;
+}
+@media (max-width: 607px) {
+  .projects .contactMe__card__info__item svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+.projects .contactMe__card__info__item div {
+  font-size: 1rem;
+}
+@media (max-width: 607px) {
+  .projects .contactMe__card__info__item div {
+    font-size: 0.8rem;
+  }
+}
+.projects .contactMe__card__info__item div a {
+  color: #111111;
+  font-weight: 600;
+}
+.projects .contactMe__card__info__item div a#phone-number {
+  color: var(--codewar);
+}
+.projects .contactMe__card__info__item div a:hover {
+  font-weight: 700;
+  font-size: 0.98em;
+}
+
+footer {
+  background-color: #D9ECF2;
+  border-radius: 100px 100px 0 0;
+  padding: 2em 3em;
+  padding-top: 5em;
+}
+@media (max-width: 606px) {
+  footer {
+    border-radius: 60px 60px 0 0;
+    padding-bottom: 2em;
+    font-size: 0.7rem;
+  }
+}
+footer .footerBox {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footerBox p {
+  font-weight: 500;
+}
+footer .footerBox__logo-box {
+  margin-top: 1.5em;
+}
+footer .footerBox__logo-box svg {
+  margin-right: 0.4em;
+  width: 47px;
+  height: 47px;
+}
+@media (max-width: 606px) {
+  footer .footerBox__logo-box svg {
+    width: 27px;
+    height: 27px;
+  }
+}
+footer .footerBox__quicklinks h5 {
+  border-bottom: 1px solid var(--codewar);
+  display: inline;
+}
+footer .footerBox__quicklinks ul {
+  margin-top: 1em;
+}
+footer .copyright {
+  text-align: center;
+  margin-top: 5em;
 }
 
 /*# sourceMappingURL=main.css.map */

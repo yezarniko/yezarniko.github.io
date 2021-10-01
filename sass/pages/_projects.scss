@@ -1,6 +1,6 @@
 .projects {
   padding-top: 11rem;
-  scroll-margin-bottom: 100vh;
+  scroll-margin-bottom: 500vh;
   background: #fff;
   &__header {
     @include section_header(calc(180px - 10vh));
@@ -11,6 +11,9 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    width: 95%;
+    max-width: 1080px;
+    margin: 0 auto;
   }
 
   &__box {
@@ -18,12 +21,10 @@
     flex-direction: column;
     @include media(">=desktop") {
       flex-direction: row;
+      margin-bottom: 3em;
     }
     justify-content: space-between;
     align-items: center;
-    width: 95%;
-    max-width: 1080px;
-    margin: 3em auto;
     &__project {
       background: #fff;
       box-shadow: var(--shadow);
@@ -103,12 +104,7 @@
       }
     }
     &-hidden {
-      @include media("<desktop") {
-        display: none;
-      }
-    }
-    &-last {
-      margin-bottom: 0;
+      display: none;
     }
   }
 
@@ -118,11 +114,98 @@
     justify-content: flex-end;
     width: 300px;
     margin: 0 auto;
-    svg {
-      height: 32px;
-    }
     @include media(">=desktop") {
-     display: none; 
+      width: 100%;
+    }
+    svg {
+      height: 25px;
+    }
+    &-hidden {
+      display: none;
     }
   }
+
+  .contactMe {
+    width: 100%;
+
+    h3 {
+      position: relative;
+      text-align: center;
+      margin: 5em 0 5em 0;
+    }
+
+    &__card {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      padding: 1em 0;
+      margin-bottom: 12em;
+      @include media(">=desktop") {
+        align-items: center;
+      }
+
+      &__message {
+        @include flex-center(column);
+        max-width: 174px;
+        max-height: 202px;
+        margin-left: 10em;
+        @include media("<=607px") {
+          margin-left: 0;
+          svg {
+            width: 40px;
+          }
+        }
+      }
+      
+      p {
+        text-align: center;
+        font-weight: 600;
+        margin-top: .5em;
+        font-size: 1rem;
+        line-height: 2em;
+        @include media("<=607px") {
+          font-size: .5rem;
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        &__item {
+          display: flex;
+          align-items: center;
+          margin: 1em 2em;
+          @include media("<=607px") {
+            margin: 1em;
+          }
+          svg {
+            margin: 0 .5em;
+            @include media("<=607px") {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          div {
+            font-size: 1rem;
+            @include media("<=607px") {
+              font-size: .8rem;
+            }
+            
+            a {
+              color: #111111;
+              font-weight: 600;
+              &#phone-number {
+                color: var(--codewar);
+              }
+              &:hover {
+                font-weight: 700;
+                font-size: .98em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
 }

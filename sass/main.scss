@@ -34,6 +34,9 @@ body {
   a {
     text-decoration: none;
   }
+  ul {
+    list-style: none;
+  }
 }
 
 .container {
@@ -101,3 +104,4 @@ button {
 @import "./nav";
 @import "./pages/intro", "./pages/skills", "./pages/cs_skills",
   "./pages/projects", "./pages/about-me";
+@import "./footer";
