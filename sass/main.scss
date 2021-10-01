@@ -34,6 +34,9 @@ body {
   a {
     text-decoration: none;
   }
+  ul {
+    list-style: none;
+  }
 }
 
 .container {
@@ -50,6 +53,7 @@ body {
   }
 
   section {
+    position: relative;
     min-height: 100%;
     width: 100%;
     scroll-snap-align: start;
@@ -93,6 +97,11 @@ body {
   border-radius: 10px;
 }
 
+button {
+  border: 0;
+}
+
 @import "./nav";
 @import "./pages/intro", "./pages/skills", "./pages/cs_skills",
   "./pages/projects", "./pages/about-me";
+@import "./footer";

@@ -1,0 +1,43 @@
+footer {
+  background-color: #D9ECF2;
+  border-radius: 100px 100px 0 0;
+  padding: 2em 3em;
+  padding-top: 5em;
+  @include media("<607px") {
+    border-radius: 60px 60px 0 0;
+    padding-bottom: 2em;
+    font-size: .7rem;
+  }
+  .footerBox {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-weight: 500;
+    }
+    &__logo-box {
+      margin-top: 1.5em;
+      svg {
+        margin-right: .4em;
+        width: 47px;
+        height: 47px;
+        @include media("<607px") {
+          width: 27px;
+          height: 27px;
+        }
+      }
+    }
+    &__quicklinks {
+      h5 {
+        border-bottom: 1px solid var(--codewar);
+        display: inline;
+      }
+      ul {
+        margin-top: 1em;
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 5em;
+  }
+}

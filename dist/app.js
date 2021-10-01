@@ -1,5 +1,10 @@
 const MINWIDTH = 961;
-const codewarColor = '#b1361e';
+const codewarColor = "#b1361e";
+const projects__boxes = [
+  ...document.querySelector(".projects__warp").children,
+].filter((c) => [...c.classList].includes("projects__box"));
+var currentProjectsBox = 0;
+const lastBox = projects__boxes.length - 1;
 
 function getStyleVar(name) {
   return window
@@ -58,15 +63,24 @@ const handleMenu = (check) => {
 };
 
 const handleWindowSize = () => {
-  const width = window.innerWidth;
   const { menuExpand } = getNavElements();
 
-  if (width >= MINWIDTH) {
-    handleMenuOpen("flex");
-  } else {
-    if (menuExpand.style.display !== "none") handleMenu(false);
-  }
+  mediaControl(
+    () => handleMenuOpen("flex"),
+    () => {
+      if (menuExpand.style.display !== "none") handleMenu(false);
+    }
+  );
 };
+
+function mediaControl(desktopTask, mobileTask) {
+  const width = window.innerWidth;
+  if (width >= MINWIDTH) {
+    desktopTask();
+  } else {
+    mobileTask();
+  }
+}
 
 const handleScroll = () => {
   handleMenuOnLeave();
@@ -128,6 +142,57 @@ const showMessageDialog = () => {
   }
 };
 
+const controlProjectBox = (pbox, state, modifier) => {
+  if(modifier === "hidden" || modifier === "last")
+    switch (state) {
+      case "add":
+        pbox.classList.add(`projects__box-${modifier}`);
+        break;
+      case "rm":
+        pbox.classList.remove(`projects__box-${modifier}`);
+        break;
+  }
+};
+
+const handleMoreButtonDisplay = () => {
+  if (projects__boxes.indexOf(projects__boxes[currentProjectsBox]) === lastBox)
+    document.querySelector(".projects__more_btn").style.display = "none";
+};
+
+const handleMoreButton = () => {
+  Index = projects__boxes.indexOf(
+    document.querySelector(".projects__box-last")
+  );
+  if (Index !== lastBox) {
+    controlProjectBox(projects__boxes[Index + 1], "rm", "hidden");
+    controlProjectBox(projects__boxes[Index + 1], "add", "last");
+    controlProjectBox(projects__boxes[Index], "rm", "last");
+    currentProjectsBox += 1;
+  }
+  handleMoreButtonDisplay();
+  document.querySelector(".container").style.scrollSnapType = "none";
+  setInterval(()=>
+  document.querySelector(".container").style.scrollSnapType = "y mandatory",
+  3000
+  );
+};
+
+const initialProjectShowcase = () => {
+  mediaControl(
+    () => {
+      controlProjectBox(projects__boxes[1], "rm", "hidden");
+      currentProjectsBox += 1;
+    },
+    () => controlProjectBox(projects__boxes[1], "add", "hidden")
+  );
+  controlProjectBox(projects__boxes[currentProjectsBox], "add", "last")
+  handleMoreButtonDisplay();
+};
+
 showMessageDialog();
 window.onresize = handleWindowSize;
 landingPageObserve();
+initialProjectShowcase();
+document
+  .querySelector(".projects__more_btn h4")
+  .addEventListener("click", handleMoreButton);

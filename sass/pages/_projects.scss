@@ -1,0 +1,211 @@
+.projects {
+  padding-top: 11rem;
+  scroll-margin-bottom: 500vh;
+  background: #fff;
+  &__header {
+    @include section_header(calc(180px - 10vh));
+  }
+
+  &__warp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 95%;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    @include media(">=desktop") {
+      flex-direction: row;
+      margin-bottom: 3em;
+    }
+    justify-content: space-between;
+    align-items: center;
+    &__project {
+      background: #fff;
+      box-shadow: var(--shadow);
+      width: 300px;
+      height: 350px;
+      @include media("<desktop") {
+        margin-bottom: 3em;
+      }
+
+      &__thumbnail {
+        width: 100%;
+        height: 60%;
+        background: linear-gradient(
+          202.92deg,
+          rgba(31, 144, 180, 0.17) 32.6%,
+          rgba(243, 28, 183, 0.42) 90.43%
+        );
+      }
+      &__info_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.5em 1em;
+        width: 100%;
+        height: 40%;
+        &__title {
+          text-align: center;
+          color: rgb(36, 34, 34);
+          font-weight: 700;
+        }
+        &__btn {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &__view {
+            @include flex-center(column);
+            margin-right: 10px;
+            svg {
+              width: 30px;
+              height: 40px;
+            }
+            a {
+              font-weight: 600;
+              color: var(--codewar);
+            }
+            &:hover {
+              svg {
+                width: 40px;
+              }
+              a {
+                font-weight: 700;
+              }
+            }
+          }
+
+          &__source {
+            @include flex-center(column);
+            svg {
+              width: 30px;
+              height: 40px;
+            }
+            a {
+              font-weight: 600;
+              color: #1a4674;
+            }
+            &:hover {
+              svg {
+                width: 40px;
+              }
+              a {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-hidden {
+      display: none;
+    }
+  }
+
+  &__more_btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 300px;
+    margin: 0 auto;
+    @include media(">=desktop") {
+      width: 100%;
+    }
+    svg {
+      height: 25px;
+    }
+    &-hidden {
+      display: none;
+    }
+  }
+
+  .contactMe {
+    width: 100%;
+
+    h3 {
+      position: relative;
+      text-align: center;
+      margin: 5em 0 5em 0;
+    }
+
+    &__card {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      padding: 1em 0;
+      margin-bottom: 12em;
+      @include media(">=desktop") {
+        align-items: center;
+      }
+
+      &__message {
+        @include flex-center(column);
+        max-width: 174px;
+        max-height: 202px;
+        margin-left: 10em;
+        @include media("<=607px") {
+          margin-left: 0;
+          svg {
+            width: 40px;
+          }
+        }
+      }
+      
+      p {
+        text-align: center;
+        font-weight: 600;
+        margin-top: .5em;
+        font-size: 1rem;
+        line-height: 2em;
+        @include media("<=607px") {
+          font-size: .5rem;
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        &__item {
+          display: flex;
+          align-items: center;
+          margin: 1em 2em;
+          @include media("<=607px") {
+            margin: 1em;
+          }
+          svg {
+            margin: 0 .5em;
+            @include media("<=607px") {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          div {
+            font-size: 1rem;
+            @include media("<=607px") {
+              font-size: .8rem;
+            }
+            
+            a {
+              color: #111111;
+              font-weight: 600;
+              &#phone-number {
+                color: var(--codewar);
+              }
+              &:hover {
+                font-weight: 700;
+                font-size: .98em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
+}

@@ -1,4 +1,4 @@
-h3.title {
+h3 {
   font-size: calc(1rem + 0.2vw);
   letter-spacing: 1px;
   @include media(">=desktop") {
