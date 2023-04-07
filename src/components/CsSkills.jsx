@@ -2,7 +2,7 @@ import React from "react";
 
 function CsSkills() {
   return (
-    <section className="cs_skills" id="cs-skills-page">
+    <section className="cs_skills" id="cs-skills">
       <div className="bubble bubble__indigo"></div>
       <div className="bubble bubble__yellow"></div>
       <div className="bubble bubble__pink"></div>

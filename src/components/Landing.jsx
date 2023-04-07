@@ -22,7 +22,7 @@ const Landing = ({ setIsNavScrolled }) => {
   }, []);
 
   return (
-    <section ref={landingPageRef} className="landing" id="landing-page">
+    <section ref={landingPageRef} className="landing" id="landing">
       <main className="landing__main">
         <div className="landing__feature-text">
           <h1>
