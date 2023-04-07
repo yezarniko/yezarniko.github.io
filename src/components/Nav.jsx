@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCssVariables } from "@hooks/useCssVariables";
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 function OpenMenuIcon({ color, style }) {
   return (
@@ -78,9 +80,9 @@ const Nav = ({ isNavScrolled }) => {
         style={isMenuOpen ? { maxHeight: "42vh" } : { height: "100%" }}
       >
         <div className="menu__top-bar">
-          <a href="#landing-page">
+          <HashLink smooth to="/#landing" className="link">
             <h2 className="menu__logo disable-select">Yezarniko</h2>
-          </a>
+          </HashLink>
           <span
             role="button"
             className="menu__collapse"
@@ -105,18 +107,24 @@ const Nav = ({ isNavScrolled }) => {
           }}
         >
           <li>
-            <a href="#skills-page">skills</a>
+            <HashLink smooth to="/#skills" className="link">
+              skills
+            </HashLink>
           </li>
           <li>
-            <a href="#projects-page">projects</a>
+            <HashLink smooth to="/" className="link">
+              projects
+            </HashLink>
           </li>
           <li>
-            <a href="#contactMe-page">contact me</a>
+            <HashLink smooth to="/#" className="link">
+              contact me
+            </HashLink>
           </li>
           <li className="about-me">
-            <a href="./about-me.html" target="_blank" rel="noopener noreferrer">
+            <Link to="/about" className="link">
               about me
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
