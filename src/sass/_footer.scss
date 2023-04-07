@@ -1,12 +1,12 @@
 footer {
-  background-color: #D9ECF2;
+  background-color: #d9ecf2;
   border-radius: 100px 100px 0 0;
   padding: 2em 3em;
   padding-top: 5em;
   @include media("<607px") {
     border-radius: 60px 60px 0 0;
     padding-bottom: 2em;
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
   .footerBox {
     display: flex;
@@ -17,18 +17,16 @@ footer {
     &__logo-box {
       margin-top: 1.5em;
       svg {
-        margin-right: .4em;
-        width: 47px;
-        height: 47px;
+        margin-right: 0.8em;
+        width: 40px;
         @include media("<607px") {
           width: 27px;
-          height: 27px;
         }
       }
     }
     &__quicklinks {
       h5 {
-        border-bottom: 1px solid var(--codewar);
+        border-bottom: 2px solid var(--codewar);
         display: inline;
       }
       ul {
