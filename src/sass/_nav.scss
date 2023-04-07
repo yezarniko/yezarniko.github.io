@@ -75,7 +75,7 @@ nav {
           @include media('>=desktop') {
             margin-top: 0;
           }
-          a {
+          .link {
             background: var(--about-me-background);
             color: var(--about-me-color);
             padding: 0.6em;
@@ -86,7 +86,7 @@ nav {
             }
           }
         }
-        a {
+        .link {
           color: var(--nav-text-color);
           font-size: var(--nav-fontsize);
           font-weight: 500;
