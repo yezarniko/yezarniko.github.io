@@ -91,6 +91,9 @@ nav {
           font-size: var(--nav-fontsize);
           font-weight: 500;
           letter-spacing: 0.1em;
+          user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
           &:hover {
             color: var(--nav-text-hover-color);
             text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4),
