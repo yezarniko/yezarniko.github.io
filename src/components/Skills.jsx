@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import rankIcon from "@assets/rank.svg";
 import brainRightIcon from "@assets/brain-right.svg";
 import brainLeftIcon from "@assets/brain-left.svg";
 import perfectBrainIcon from "@assets/perfect-brain.svg";
@@ -7,18 +6,26 @@ import { codewarsUserDataFetch } from "@/axios/custom";
 
 const Skills = () => {
   const codewarsUserName = "BSidJu";
-  const [totalCompleteKata, setTotalCompleteKata] = useState(0);
+  const [totalCompleteKata, setTotalCompleteKata] = useState(30);
+  const [currentRank, setCurrentRank] = useState("4 kyu");
+  const rankColors = {
+    "1 kyu": "#866cc7;",
+    "2 kyu": "#866cc7;",
+    "3 kyu": "#1f87e7",
+    "4 kyu": "#3C7EBB",
+  };
 
   useEffect(() => {
     async function fetchData() {
       const response = await codewarsUserDataFetch(`/${codewarsUserName}`);
+      setCurrentRank(response.data.ranks.overall.name);
       setTotalCompleteKata(response.data.codeChallenges.totalCompleted);
     }
     fetchData();
   }, []);
 
   return (
-    <section className="skills" id="skills-page">
+    <section className="skills" id="skills">
       <div className="skills__edu_card">
         <div className="skills__edu">
           <h2>Education</h2>
@@ -40,37 +47,31 @@ const Skills = () => {
           <div className="skills__card__box">
             <div className="skills__card_inside_card skills__ps__card_inside_card">
               <p>
-                Current Rank: &nbsp;
-                {/* <img
-                  id="rank"
-                  width="70"
-                  height="32"
-                  src={rankIcon}
-                  alt="rank"
-                /> */}
+                Current Rank:
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="65"
+                  width="72"
                   height="32"
-                  viewBox="0 0 70 34"
+                  viewBox="0 0 72 34"
+                  id="rank"
                 >
                   <path
                     fill="#141414"
                     d="M62.237 31.45L68.61 20 62.237 8.55H16.41L10.037 20l6.373 11.45z"
                   />
                   <text
-                    fill="#3C7EBB"
-                    font-family="Lato, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif"
-                    font-size="14"
+                    fill={rankColors[currentRank]}
+                    fontFamily="Lato, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif"
+                    fontSize="14"
                     x="32"
                     y="18.77"
-                    text-anchor="middle"
+                    textAnchor="middle"
                     transform="translate(7 6)"
                   >
-                    4 kyu
+                    {currentRank}
                   </text>
                   <path
-                    fill="#3C7EBB"
+                    fill={rankColors[currentRank]}
                     d="M15.083 34L7 20l8.083-14H63.58l8.083 14-8.083 14H15.083zm46.614-3.233L67.919 20 61.697 9.233H16.95L10.728 20l6.222 10.767h44.747z"
                   />
                 </svg>
@@ -87,10 +88,7 @@ const Skills = () => {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <span className="skills__ps__card__highlight">
-                    {" "}
-                    &nbsp;codewars
-                  </span>
+                  <span className="skills__ps__card__highlight"> codewars</span>
                 </a>
                 .<br />
                 <br />
@@ -161,7 +159,7 @@ const Skills = () => {
             <div className="skills__card_inside_card skills__pd__card_inside_card">
               <p>
                 Total websites I was designed:
-                <span className="skills__pd__card__highlight">2</span>
+                <span className="skills__pd__card__highlight"> 5</span>
                 <br />
                 <br />
                 The tools i used:
@@ -170,10 +168,10 @@ const Skills = () => {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <span className="skills__pd__card__highlight">Figma</span>
+                  <span className="skills__pd__card__highlight"> Figma </span>
                 </a>
                 and my
-                <span className="skills__pd__card__highlight">Brain</span>.
+                <span className="skills__pd__card__highlight"> Brain</span>.
               </p>
             </div>
             <div className="skills__card__logo skills__pd__card__logo">
