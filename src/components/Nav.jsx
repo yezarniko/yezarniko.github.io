@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { useCssVariables } from "@hooks/useCssVariables";
+import { useNavStyle } from "@hooks/useNavStyle";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
 
 function OpenMenuIcon({ color, style }) {
   return (
@@ -52,12 +53,25 @@ function CloseMenuIcon({ color, style }) {
   );
 }
 
-const Nav = ({ isNavScrolled }) => {
+/**
+ * * Navigation Bar
+ * @component
+ * @return {ReactNode} - The representation of Nav Bar UI Component
+ */
+const Nav = () => {
   const codewarColor = useCssVariables("--codewar");
   const MINWIDTH = parseInt(useCssVariables("--minWidth"));
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const { isNavStyleChanged } = useNavStyle();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("render nav");
+  });
 
   useEffect(() => {
     function handleWindowResize() {
@@ -67,9 +81,13 @@ const Nav = ({ isNavScrolled }) => {
     window.onresize = handleWindowResize;
   }, []);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.path, location.hash]);
+
   return (
     <nav
-      className={isNavScrolled ? "nav--scrolled" : ""}
+      className={isNavStyleChanged ? "nav__style--changed" : ""}
       style={{
         backdropFilter: `blur(${isMenuOpen ? "20px" : "10px"})`,
         borderRadius: isMenuOpen ? "0 0 2em 2em" : "0 0 0 0",
@@ -86,15 +104,15 @@ const Nav = ({ isNavScrolled }) => {
           <span
             role="button"
             className="menu__collapse"
-            onClick={(e) => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <OpenMenuIcon
               style={{ display: isMenuOpen ? "none" : "inline" }}
-              color={isNavScrolled ? codewarColor : "white"}
+              color={isNavStyleChanged ? codewarColor : "white"}
             />
             <CloseMenuIcon
               style={{ display: isMenuOpen ? "inline" : "none" }}
-              color={isNavScrolled ? codewarColor : "white"}
+              color={isNavStyleChanged ? codewarColor : "white"}
             />
           </span>
         </div>

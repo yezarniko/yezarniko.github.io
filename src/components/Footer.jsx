@@ -1,7 +1,16 @@
-import React from "react";
+/** React */
+import React, { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 
+/**
+ * * Footer
+ * @component
+ * @return {ReactNode} - The representation of Footer UI Component
+ */
 function Footer() {
+  useEffect(() => {
+    console.log("render footer");
+  });
   return (
     <footer>
       <div className="footerBox">

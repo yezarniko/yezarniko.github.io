@@ -1,10 +1,20 @@
-import React, { useState, useEffect } from "react";
-import brainRightIcon from "@assets/brain-right.svg";
-import brainLeftIcon from "@assets/brain-left.svg";
-import perfectBrainIcon from "@assets/perfect-brain.svg";
+/** Axios */
 import { codewarsUserDataFetch } from "@/axios/custom";
+/**
+ * Assets
+ */
+import brainLeftIcon from "@assets/brain-left.svg";
+import brainRightIcon from "@assets/brain-right.svg";
+import perfectBrainIcon from "@assets/perfect-brain.svg";
+/** React */
+import React, { useEffect, useState } from "react";
 
-const Skills = () => {
+/**
+ * *Skills Section
+ * @component
+ * @return {REActNode} - Skills Page UI
+ */
+function Skills() {
   const codewarsUserName = "BSidJu";
   const [totalCompleteKata, setTotalCompleteKata] = useState(30);
   const [currentRank, setCurrentRank] = useState("4 kyu");
@@ -16,13 +26,18 @@ const Skills = () => {
   };
 
   useEffect(() => {
+    console.log("render skills");
+  });
+
+  useEffect(() => {
     async function fetchData() {
       const response = await codewarsUserDataFetch(`/${codewarsUserName}`);
       setCurrentRank(response.data.ranks.overall.name);
       setTotalCompleteKata(response.data.codeChallenges.totalCompleted);
     }
+    console.log("fetching data");
     fetchData();
-  }, []);
+  }, [currentRank, setTotalCompleteKata]);
 
   return (
     <section className="skills" id="skills">
@@ -230,6 +245,6 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Skills;

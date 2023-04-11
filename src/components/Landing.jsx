@@ -1,17 +1,18 @@
 /** Style */
 import "@/sass/pages/landing.scss";
 /** Hooks */
-import { useNavStyle } from "@hooks/useScrollChanges";
+import { useNavStyle } from "@hooks/useNavStyle";
 /** React */
 import React, { useEffect, useRef } from "react";
 
 /**
- *  *Landing Page
- * 
+ *  *Landing Section
+ * @component
+ * @return {ReactNode} - Landing Section UI
  */
 const Landing = () => {
   const landingPageRef = useRef();
-  const { setIsNavScrolled } = useNavStyle();
+  const { changeNavStyle } = useNavStyle();
 
   useEffect(() => {
     console.log("render landing");
@@ -24,9 +25,9 @@ const Landing = () => {
     const landingObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
-          setIsNavScrolled(true);
+          changeNavStyle(true);
         } else {
-          setIsNavScrolled(false);
+          changeNavStyle(false);
         }
       });
     }, landingPageOptions);

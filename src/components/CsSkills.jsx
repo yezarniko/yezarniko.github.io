@@ -1,6 +1,16 @@
+/** React */
 import React from "react";
 
+/**
+ * * CS Skills Section
+ * @component
+ * @return {ReactNode} - The representation of CS Skills Section UI
+ * TODO: Need to seperate component (icon and text together);
+ * TODO: Each setction with each headline and icon-text components;
+ */
 function CsSkills() {
+  console.log("render csskills");
+
   return (
     <section className="cs_skills" id="cs-skills">
       <div className="bubble bubble__indigo"></div>

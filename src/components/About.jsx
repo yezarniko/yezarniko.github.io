@@ -1,9 +1,20 @@
-import React from "react";
-import { useEffect } from "react";
+import { useNavStyle } from "@hooks/useNavStyle";
+import React, { useEffect } from "react";
 
-function About({ setIsNavScrolled }) {
+/**
+ * * About Page
+ * @component
+ * @return {ReactNode} - The representation of About Page UI
+ */
+function About() {
   useEffect(() => {
-    setIsNavScrolled(true);
+    console.log("render about");
+  });
+
+  const { changeNavStyle } = useNavStyle();
+
+  useEffect(() => {
+    changeNavStyle(true);
   });
   return <div>About</div>;
 }
