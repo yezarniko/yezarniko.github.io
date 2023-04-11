@@ -85,5 +85,72 @@
         width: 80%;
       }
     }
+    #environments {
+      #coffee {
+        animation-duration: 5s;
+        animation-name: floatingCoffee;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
+    #programmer {
+      animation-duration: 2s;
+      animation-name: floatingProgrammer;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    #computer3,
+    #computer2 {
+      animation-duration: 5s;
+      animation-name: floatingComputer;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      > #apple {
+        animation-duration: 2s;
+        animation-name: changeAppleColor;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
+  }
+}
+
+@keyframes floatingProgrammer {
+  from {
+    transform: translateY(2%);
+  }
+
+  to {
+    transform: translateY(-2%);
+  }
+}
+
+@keyframes floatingComputer {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-2%);
+  }
+}
+
+@keyframes floatingCoffee {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-2%);
+  }
+}
+
+@keyframes changeAppleColor {
+  from {
+    fill: rgb(241, 96, 243);
+  }
+
+  to {
+    fill: rgba(85, 181, 146, 0.87);
   }
 }

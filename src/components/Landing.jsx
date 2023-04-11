@@ -1,8 +1,21 @@
-import React, { useEffect, useRef } from "react";
+/** Style */
 import "@/sass/pages/landing.scss";
+/** Hooks */
+import { useNavStyle } from "@hooks/useScrollChanges";
+/** React */
+import React, { useEffect, useRef } from "react";
 
-const Landing = ({ setIsNavScrolled }) => {
+/**
+ *  *Landing Page
+ * 
+ */
+const Landing = () => {
   const landingPageRef = useRef();
+  const { setIsNavScrolled } = useNavStyle();
+
+  useEffect(() => {
+    console.log("render landing");
+  });
 
   useEffect(() => {
     const landingPageOptions = {
@@ -484,7 +497,7 @@ const Landing = ({ setIsNavScrolled }) => {
                   fill="url(#paint18_linear)"
                 />
                 <path
-                  id="Vector_73"
+                  id="apple"
                   d="M362.479 612.829C360.951 614.256 359.297 614 357.728 613.288C356.06 612.56 354.525 612.489 352.737 613.201C350.511 614.112 349.343 613.815 348.033 612.577C340.654 604.739 341.968 593.019 350.515 592.726C352.585 592.873 354.017 593.929 355.235 594.036C357.055 593.7 358.809 592.678 360.747 592.85C363.076 593.078 364.804 594.026 365.94 595.695C361.093 598.484 362.12 604.802 366.494 606.646C365.573 608.937 364.402 611.197 362.476 612.848L362.479 612.829ZM355.092 592.723C354.927 589.294 357.763 586.526 360.973 586.305C361.344 590.263 357.248 593.148 355.092 592.723Z"
                   fill="black"
                 />
