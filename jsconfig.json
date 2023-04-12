@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // Allow `@/` to map to `src`
+      "@/*": ["./src/*"],
+      "@comp/*": ["./src/components"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@assets/*": ["./src/assets/*"]
+    }
+  }
+}
