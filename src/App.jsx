@@ -1,16 +1,32 @@
-import React, { useState } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
-import Nav from "@comp/Nav";
-import Landing from "@comp/Landing";
-import Skills from "@comp/Skills";
-import { CssVariablesProvider } from "@hooks/useCssVariables";
+/**
+ * Components
+ */
+import About from "@comp/About";
+import ContactMe from "@comp/ContactMe";
 import CsSkills from "@comp/CsSkills";
 import Footer from "@comp/Footer";
-import About from "@comp/About";
+import Landing from "@comp/Landing";
+import Nav from "@comp/Nav";
+import Projects from "@comp/Projects";
+import Skills from "@comp/Skills";
 
+/**
+ * Hooks
+ */
+import { CssVariablesProvider } from "@hooks/useCssVariables";
+import { NavStyleProvider } from "@hooks/useNavStyle";
+/**
+ * React
+ */
+import { Outlet, Route, Routes } from "react-router-dom";
+
+/**
+ * * App
+ * The main App Component
+ * @component
+ * @returns {ReactNode} - The representation of App component UI
+ */
 function App() {
-  const [isNavScrolled, setIsNavScrolled] = useState(false);
-
   return (
     <div className="App">
       <CssVariablesProvider>
@@ -19,13 +35,15 @@ function App() {
             path="/"
             element={
               <>
-                <header>
-                  <Nav {...{ isNavScrolled }} />
-                </header>
-                <main className="container">
-                  <Outlet />
-                  <Footer />
-                </main>
+                <NavStyleProvider>
+                  <header>
+                    <Nav />
+                  </header>
+                  <main className="container">
+                    <Outlet />
+                    <Footer />
+                  </main>
+                </NavStyleProvider>
               </>
             }
           >
@@ -33,18 +51,16 @@ function App() {
               path="/"
               element={
                 <>
-                  <Landing {...{ setIsNavScrolled }} />
+                  <Landing />
                   <Skills />
                   <CsSkills />
+                  <Projects />
+                  <ContactMe />
                 </>
               }
             />
-            <Route
-              path="/about"
-              element={<About {...{ setIsNavScrolled }} />}
-            />
+            <Route path="/about" element={<About />} />
           </Route>
-          <Route path="/admin" element={<h2>Admin</h2>} />
         </Routes>
       </CssVariablesProvider>
     </div>
