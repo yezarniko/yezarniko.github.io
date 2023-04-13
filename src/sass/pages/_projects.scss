@@ -14,13 +14,17 @@
     width: 95%;
     max-width: 1080px;
     margin: 0 auto;
+    margin-top: 3em;
   }
 
   &__box {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4em;
+    row-gap: 7em;
+    margin: 0 auto;
     @include media(">=desktop") {
-      flex-direction: row;
+      grid-template-columns: repeat(3, 1fr);
       margin-bottom: 3em;
     }
     justify-content: space-between;
@@ -124,88 +128,4 @@
       display: none;
     }
   }
-
-  .contactMe {
-    width: 100%;
-
-    h3 {
-      position: relative;
-      text-align: center;
-      margin: 5em 0 5em 0;
-    }
-
-    &__card {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      box-shadow: var(--shadow);
-      padding: 1em 0;
-      margin-bottom: 12em;
-      @include media(">=desktop") {
-        align-items: center;
-      }
-
-      &__message {
-        @include flex-center(column);
-        max-width: 174px;
-        max-height: 202px;
-        margin-left: 10em;
-        @include media("<=607px") {
-          margin-left: 0;
-          svg {
-            width: 40px;
-          }
-        }
-      }
-      
-      p {
-        text-align: center;
-        font-weight: 600;
-        margin-top: .5em;
-        font-size: 1rem;
-        line-height: 2em;
-        @include media("<=607px") {
-          font-size: .5rem;
-        }
-      }
-
-      &__info {
-        display: flex;
-        flex-direction: column;
-        &__item {
-          display: flex;
-          align-items: center;
-          margin: 1em 2em;
-          @include media("<=607px") {
-            margin: 1em;
-          }
-          svg {
-            margin: 0 .5em;
-            @include media("<=607px") {
-              width: 20px;
-              height: 20px;
-            }
-          }
-          div {
-            font-size: 1rem;
-            @include media("<=607px") {
-              font-size: .8rem;
-            }
-            
-            a {
-              color: #111111;
-              font-weight: 600;
-              &#phone-number {
-                color: var(--codewar);
-              }
-              &:hover {
-                font-weight: 700;
-                font-size: .98em;
-              }
-            }
-          }
-        }
-      }
-    }
-  }  
 }
