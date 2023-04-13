@@ -34,7 +34,7 @@ function Projects() {
   const projects = projectsAll.slice(0, numberOfPrjectsToDisplay);
 
   return (
-    <section className="projects" id="projects-page">
+    <section className="projects" id="projects">
       <h3 className="projects__header">Opensource Projects</h3>
       <div className="projects__warp">
         <div className="projects__box">

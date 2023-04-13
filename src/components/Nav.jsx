@@ -130,12 +130,12 @@ const Nav = () => {
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/" className="link">
+            <HashLink smooth to="/#projects" className="link">
               projects
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/#" className="link">
+            <HashLink smooth to="/#contactMe" className="link">
               contact me
             </HashLink>
           </li>
