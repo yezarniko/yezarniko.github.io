@@ -6,6 +6,7 @@ import ContactMe from "@comp/ContactMe";
 import CsSkills from "@comp/CsSkills";
 import Footer from "@comp/Footer";
 import Landing from "@comp/Landing";
+import Loading from "@comp/Loading";
 import Nav from "@comp/Nav";
 import Projects from "@comp/Projects";
 import Skills from "@comp/Skills";
@@ -15,6 +16,7 @@ import Skills from "@comp/Skills";
  */
 import { CssVariablesProvider } from "@hooks/useCssVariables";
 import { NavStyleProvider } from "@hooks/useNavStyle";
+import { Suspense } from "react";
 /**
  * React
  */
@@ -29,40 +31,43 @@ import { Outlet, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <CssVariablesProvider>
-        <Routes>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Suspense fallback={<Loading />}>
+                <CssVariablesProvider>
+                  <NavStyleProvider>
+                    <header>
+                      <Nav />
+                    </header>
+                    <main className="container">
+                      <Outlet />
+                      <Footer />
+                    </main>
+                    {/* <Loading /> */}
+                  </NavStyleProvider>
+                </CssVariablesProvider>
+              </Suspense>
+            </>
+          }
+        >
           <Route
             path="/"
             element={
               <>
-                <NavStyleProvider>
-                  <header>
-                    <Nav />
-                  </header>
-                  <main className="container">
-                    <Outlet />
-                    <Footer />
-                  </main>
-                </NavStyleProvider>
+                <Landing />
+                <Skills />
+                <CsSkills />
+                <Projects />
+                <ContactMe />
               </>
             }
-          >
-            <Route
-              path="/"
-              element={
-                <>
-                  <Landing />
-                  <Skills />
-                  <CsSkills />
-                  <Projects />
-                  <ContactMe />
-                </>
-              }
-            />
-            <Route path="/about" element={<About />} />
-          </Route>
-        </Routes>
-      </CssVariablesProvider>
+          />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
