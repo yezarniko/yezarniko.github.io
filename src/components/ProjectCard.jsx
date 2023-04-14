@@ -1,3 +1,6 @@
+/* React */
+import { useState } from "react";
+
 /**
  * * Project Card
  *
@@ -8,11 +11,14 @@
  * @returns {ReactNode} representation of Project Card
  */
 function ProjectCard({ name, previewLink, githubLink, thumbnailImageLink }) {
+  const [isThumbnailImageLinkBroken, setThumbnailImageLinkBroken] =
+    useState(false);
+
   return (
     <div className="projects__box__project">
-      {thumbnailImageLink ? (
+      {thumbnailImageLink && !isThumbnailImageLinkBroken ? (
         <div className="projects__box__project__thumbnail projects__box__project__thumbnail--image">
-          <img src={thumbnailImageLink} />
+          <img src={thumbnailImageLink} onError={()=>setThumbnailImageLinkBroken(v=>!v)} />
         </div>
       ) : (
         <div className="projects__box__project__thumbnail"></div>
