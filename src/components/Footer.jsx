@@ -110,7 +110,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <h5 className="copyright">© 2021 yezarniko. All rights reserved.</h5>
+      <h5 className="copyright">© 2023 yezarniko. All rights reserved.</h5>
     </footer>
   );
 }

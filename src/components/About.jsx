@@ -1,5 +1,7 @@
+/* Hook */
 import { useNavStyle } from "@hooks/useNavStyle";
-import React, { useEffect } from "react";
+/* React */
+import { useEffect } from "react";
 
 /**
  * * About Page

@@ -7,7 +7,7 @@ import brainLeftIcon from "@assets/brain-left.svg";
 import brainRightIcon from "@assets/brain-right.svg";
 import perfectBrainIcon from "@assets/perfect-brain.svg";
 /** React */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * *Skills Section
@@ -46,7 +46,7 @@ function Skills() {
           <h2>Education</h2>
           <div className="line"></div>
           <p>
-            Currently I’m not graduated yet. But a third year IT student at
+            Currently I’m not graduated yet. But a fourth year IT student at
             Technological University Mawlamyine
           </p>
         </div>

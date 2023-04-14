@@ -1,5 +1,8 @@
+/* Data */
 import projectsAll from "@/data/projects";
+/* Components */
 import ProjectCard from "@comp/ProjectCard";
+/* React */
 import { useEffect, useState } from "react";
 
 /**
