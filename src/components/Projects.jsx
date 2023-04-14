@@ -45,14 +45,15 @@ function Projects() {
         {projectsAll.length !== numberOfPrjectsToDisplay && (
           <div className="projects__more_btn">
             <button
-              onClick={() => {
-                if (numberOfPrjectsToDisplay < projectsAll.length) {
-                  let n = numberOfPrjectsToDisplay + 3;
-                  if (n > projectsAll.length)
-                    setNumberOfProjectsToDisplay(projectsAll.length);
-                  else setNumberOfProjectsToDisplay(n);
-                }
-              }}
+              onClick={() =>
+                setNumberOfProjectsToDisplay((numOfPrjectsToDisplay) => {
+                  if (numOfPrjectsToDisplay < projectsAll.length) {
+                    let n = numOfPrjectsToDisplay + 3;
+                    if (n > projectsAll.length) return projectsAll.length;
+                    else return n;
+                  } else return numOfPrjectsToDisplay;
+                })
+              }
             >
               <h4>More</h4>
             </button>

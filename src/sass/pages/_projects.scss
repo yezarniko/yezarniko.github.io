@@ -64,45 +64,26 @@
           justify-content: flex-end;
           align-items: flex-end;
 
-          &__view {
+          &__view,
+          &__source {
             @include flex-center(column);
             margin-right: 10px;
+            font-weight: 600;
+            color: var(--codewar);
             svg {
               width: 30px;
               height: 40px;
             }
-            a {
-              font-weight: 600;
-              color: var(--codewar);
-            }
             &:hover {
+              font-weight: 700;
               svg {
                 width: 40px;
-              }
-              a {
-                font-weight: 700;
               }
             }
           }
 
           &__source {
-            @include flex-center(column);
-            svg {
-              width: 30px;
-              height: 40px;
-            }
-            a {
-              font-weight: 600;
-              color: #1a4674;
-            }
-            &:hover {
-              svg {
-                width: 40px;
-              }
-              a {
-                font-weight: 700;
-              }
-            }
+            color: #1a4674;
           }
         }
       }

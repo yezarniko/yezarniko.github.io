@@ -1,6 +1,6 @@
 /**
  * * Project Card
- * 
+ *
  * @param {string} props.name
  * @param {string} props.previewLinik
  * @param {string} props.githubLink
@@ -15,7 +15,10 @@ function ProjectCard({ name, previewLink, githubLink, thumbnailImage }) {
         <div className="projects__box__project__info_card__title">{name}</div>
         <div className="projects__box__project__info_card__btn">
           {previewLink && (
-            <div className="projects__box__project__info_card__btn__view">
+            <a
+              className="projects__box__project__info_card__btn__view"
+              href={previewLink}
+            >
               <svg
                 width="36"
                 height="36"
@@ -81,11 +84,14 @@ function ProjectCard({ name, previewLink, githubLink, thumbnailImage }) {
                   </filter>
                 </defs>
               </svg>
-              <a href={previewLink}>view</a>
-            </div>
+              view
+            </a>
           )}
           {githubLink && (
-            <div className="projects__box__project__info_card__btn__source">
+            <a
+              className="projects__box__project__info_card__btn__source"
+              href={githubLink}
+            >
               <svg
                 width="36"
                 height="36"
@@ -99,8 +105,8 @@ function ProjectCard({ name, previewLink, githubLink, thumbnailImage }) {
                   fill="black"
                 />
               </svg>
-              <a href={githubLink}>source</a>
-            </div>
+              source
+            </a>
           )}
         </div>
       </div>
