@@ -5,7 +5,7 @@
  */
 function ContactMe() {
   return (
-    <section className="contactMe" id="contactMe">
+    <div className="contactMe" id="contactMe">
       <h3>Contact Me</h3>
       <div className="contactMe__card">
         <div className="contactMe__card__message">
@@ -112,7 +112,7 @@ function ContactMe() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
