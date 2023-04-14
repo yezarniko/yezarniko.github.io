@@ -1,4 +1,5 @@
 .contactMe {
+  scroll-margin-top: 120px;
   h3 {
     position: relative;
     text-align: center;
@@ -12,6 +13,7 @@
     box-shadow: var(--shadow);
     padding: 1em 0;
     margin-bottom: 12em;
+
     @include media(">=desktop") {
       align-items: center;
     }

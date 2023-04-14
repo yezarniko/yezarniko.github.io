@@ -8,6 +8,7 @@ import Footer from "@comp/Footer";
 import Landing from "@comp/Landing";
 import Loading from "@comp/Loading";
 import Nav from "@comp/Nav";
+import NotFound from "@comp/NotFound";
 import Projects from "@comp/Projects";
 import Skills from "@comp/Skills";
 
@@ -66,6 +67,7 @@ function App() {
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>
