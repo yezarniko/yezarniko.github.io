@@ -1,3 +1,4 @@
+import projectsAll from "@/data/projects";
 import ProjectCard from "@comp/ProjectCard";
 import { useEffect, useState } from "react";
 
@@ -7,22 +8,6 @@ import { useEffect, useState } from "react";
  * @returns {ReactNode} The representation of Projects UI
  */
 function Projects() {
-  const projectsAll = [
-    {
-      name: "BiliBili Style Video Player",
-      previewLink: "#",
-      githubLink: "#",
-      thumbnailImageLink: "#",
-    },
-
-    {
-      name: "Channel Myanmar CLI Version",
-      // previewLink: "#",
-      githubLink: "#",
-      thumbnailImageLink: "#",
-    },
-  ];
-
   const [numberOfPrjectsToDisplay, setNumberOfProjectsToDisplay] = useState(0);
 
   useEffect(() => {
