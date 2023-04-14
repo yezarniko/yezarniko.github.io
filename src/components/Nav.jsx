@@ -104,7 +104,7 @@ const Nav = () => {
           <span
             role="button"
             className="menu__collapse"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen((currentMenu)=>!currentMenu)}
           >
             <OpenMenuIcon
               style={{ display: isMenuOpen ? "none" : "inline" }}
