@@ -7,10 +7,16 @@
  * @param {string} props.thumbnailImage
  * @returns {ReactNode} representation of Project Card
  */
-function ProjectCard({ name, previewLink, githubLink, thumbnailImage }) {
+function ProjectCard({ name, previewLink, githubLink, thumbnailImageLink }) {
   return (
     <div className="projects__box__project">
-      <div className="projects__box__project__thumbnail"></div>
+      {thumbnailImageLink ? (
+        <div className="projects__box__project__thumbnail projects__box__project__thumbnail--image">
+          <img src={thumbnailImageLink} />
+        </div>
+      ) : (
+        <div className="projects__box__project__thumbnail"></div>
+      )}
       <div className="projects__box__project__info_card">
         <div className="projects__box__project__info_card__title">{name}</div>
         <div className="projects__box__project__info_card__btn">
