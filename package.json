@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "firebase": "^12.15.0",
     "react": "latest",
     "react-dom": "latest",
-    "sass": "latest"
-  },
-  "devDependencies": {}
+    "sass": "latest",
+    "vite": "latest"
+  }
 }
