@@ -19,16 +19,23 @@ export const stats = [
   { value: '100%', label: 'REAL-WORLD IMPACT' },
 ];
 
-export const skills = [
-  'Python',
-  'JavaScript',
-  'Machine Learning',
-  'Deep Learning',
-  'NLP',
-  'Computer Vision',
-  'Web Development',
-  'Docker',
-  'Git & GitHub',
+export const skillGroups = [
+  {
+    field: 'Machine Learning',
+    skills: ['Python', 'Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision'],
+  },
+  {
+    field: 'Web Development',
+    skills: ['JavaScript', 'React', 'Django', 'Bootstrap'],
+  },
+  {
+    field: 'Software Development',
+    skills: ['System Design', 'REST APIs', 'MySQL', 'Git & GitHub'],
+  },
+  {
+    field: 'DevOps',
+    skills: ['Docker', 'Linux', 'Firebase', 'CI/CD'],
+  },
 ];
 
 export const projects = [
