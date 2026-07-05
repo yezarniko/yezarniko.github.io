@@ -126,6 +126,7 @@ h1.name em{font-style:italic;color:var(--accent);font-weight:300;}
 .btn-solid:hover{background:var(--accent);color:#fff;}
 .btn-line{border:1px solid var(--line);color:var(--text);}
 .btn-line:hover{border-color:var(--accent);color:var(--accent);}
+.action-icon{width:20px;height:20px;display:block;object-fit:contain;}
 .social-row{display:flex;gap:26px;font-size:13px;color:var(--text-muted);font-family:var(--mono);}
 .social-row a{display:flex;align-items:center;gap:7px;transition:color .25s;}
 .social-row a:hover{color:var(--text);}
@@ -231,6 +232,120 @@ h2.big-cta{
   max-width:760px;margin:0 auto 36px;line-height:1.15;
 }
 h2.big-cta em{color:var(--accent);font-style:italic;font-weight:300;}
+.contact-action-row{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+.contact-action-row .btn{
+  width:196px;
+  min-height:60px;
+  justify-content:center;
+}
+.social-badge-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:0 auto 24px;
+}
+.linkedin-badge-wrap{
+  display:flex;
+  justify-content:center;
+  position:relative;
+  width:320px;
+}
+.linkedin-badge-wrap .compact-social-badge{
+  width:100%;
+}
+.compact-social-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  width:320px;
+  min-height:54px;
+  padding:8px 10px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  background:#fff;
+  color:#000;
+  box-shadow:0 1px 2px rgba(0,0,0,0.12);
+  text-align:left;
+  transition:transform .25s, box-shadow .25s;
+}
+.compact-social-badge:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+.social-badge-mark{
+  flex:0 0 auto;
+}
+.linkedin-in{
+  display:inline-grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  border-radius:2px;
+  background:#0a66c2;
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  line-height:1;
+}
+.github-mark{
+  width:24px;
+  height:24px;
+  color:#24292f;
+  fill:currentColor;
+}
+.social-badge-body{
+  display:flex;
+  align-items:center;
+  min-width:0;
+  gap:8px;
+}
+.social-badge-avatar{
+  width:34px;
+  height:34px;
+  flex:0 0 auto;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center top;
+  filter:grayscale(1);
+  background:#ddd;
+}
+.social-badge-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+}
+.social-badge-title{
+  color:#000;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.15;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.social-badge-action{
+  display:block;
+  color:#0a66c2;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.25;
+  margin-top:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.github-badge .social-badge-action{
+  color:#57606a;
+}
 .contact-links{
   display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-top:50px;
   border-top:1px solid var(--line);
@@ -288,6 +403,10 @@ footer{padding:32px 0;text-align:center;font-family:var(--mono);font-size:12px;c
   .proj-row{grid-template-columns:1fr;gap:10px;}
   .proj-tags{justify-content:flex-start;max-width:none;}
   .exp-item{grid-template-columns:1fr;gap:8px;}
+  .social-badge-row{flex-direction:column;}
+  .linkedin-badge-wrap{width:min(100%,320px);}
+  .compact-social-badge{width:min(100%,320px);}
+  .contact-action-row{flex-direction:column;align-items:center;}
   .contact-links{flex-direction:column;}
   .clink{border-right:none;border-bottom:1px solid var(--line);}
 }

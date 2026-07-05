@@ -64,6 +64,7 @@ export const experience = [
 export const contactLinks = [
   { href: 'https://github.com/yezarniko', label: 'GitHub', value: 'github.com/yezarniko' },
   { href: 'https://linkedin.com/in/yezarniko', label: 'LinkedIn', value: 'linkedin.com/in/yezarniko' },
-  { href: 'mailto:yezarniko@gmail.com', label: 'Email', value: 'yezarniko422@gmail.com' },
+  { href: 'mailto:yezarniko.dev@gmail.com', label: 'Email', value: 'yezarniko.dev@gmail.com' },
+  { href: 'tel:+959797223755', label: 'Phone', value: '+959 797223755' },
   { href: '#', label: 'Location', value: 'Yangon, Myanmar' },
 ];
