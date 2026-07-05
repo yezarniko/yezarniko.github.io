@@ -38,13 +38,18 @@ nav.wrap{
   height:76px;
 }
 .brand{
-  font-family:var(--mono);
+  font-family:'Space Grotesk', sans-serif;
   font-size:13px;
   letter-spacing:0.08em;
   color:var(--text-muted);
   display:flex;align-items:center;gap:10px;
 }
-.brand .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.brand-logo{
+  width:24px;
+  height:21px;
+  display:block;
+  flex:0 0 auto;
+}
 .navlinks{display:flex;gap:36px;font-size:14px;color:var(--text-muted);}
 .navlinks a{position:relative;padding:4px 0;transition:color .25s;}
 .navlinks a:hover{color:var(--text);}

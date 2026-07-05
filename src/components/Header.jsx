@@ -31,8 +31,15 @@ function Header() {
     <header>
       <nav className="wrap" ref={navRef}>
         <div className="brand">
-          <span className="dot"></span>
-          YE ZARNI KO
+          <svg className="brand-logo" viewBox="0 0 240 210" fill="none" aria-hidden="true" focusable="false">
+            <path d="M100,30 C62,30 32,58 32,92 C32,124 56,148 88,154 L104,154 L114,176 C116,180 122,180 124,176 L134,154 L150,154 C182,148 206,124 206,92 C206,58 176,30 138,30" stroke="#7C6CF0" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M108,70 L84,94 L108,118" stroke="#F4F2FA" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M132,70 L156,94 L132,118" stroke="#F4F2FA" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="119" cy="188" r="7" fill="#7C6CF0" />
+            <circle cx="102" cy="200" r="4" fill="#7C6CF0" />
+          </svg>
+          {/* YE ZARNI KO */}
+          yezarniko
         </div>
         <div className={`navlinks${isMenuOpen ? ' is-open' : ''}`} id="primary-navigation">
           {navLinks.map((link) => (
