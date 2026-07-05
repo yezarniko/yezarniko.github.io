@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { socialLinks } from '../data/portfolio.js';
 
 function Hero() {
+  const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
+
   return (
     <section className="hero">
       <div className="wrap hero-grid">
@@ -33,8 +36,15 @@ function Hero() {
             ))}
           </div>
         </div>
-        <div className="portrait">
-          <img src="/images/portrait.png?v=transparent-5" alt="Ye Zarni Ko" />
+        <div className={`portrait${isPortraitLoaded ? ' is-loaded' : ''}`}>
+          {!isPortraitLoaded && <div className="portrait-skeleton" aria-hidden="true" />}
+          <img
+            src="/images/portrait.png?v=transparent-5"
+            alt="Ye Zarni Ko"
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setIsPortraitLoaded(true)}
+          />
         </div>
       </div>
     </section>

@@ -137,6 +137,25 @@ h1.name em{font-style:italic;color:var(--accent);font-weight:300;}
   overflow:visible;
   display:flex;align-items:flex-end;justify-content:center;
 }
+.portrait-skeleton{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:min(124%,560px);
+  aspect-ratio:4 / 5;
+  transform:translateX(-50%);
+  overflow:hidden;
+  border-radius:8px;
+  background:
+    linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent),
+    radial-gradient(circle at 50% 32%, rgba(124,108,240,0.26), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  background-size:220% 100%, 100% 100%, 100% 100%;
+  box-shadow:
+    inset 0 0 0 1px var(--line),
+    0 0 34px rgba(124,108,240,0.18);
+  animation:portrait-skeleton-shimmer 1.35s ease-in-out infinite;
+}
 .portrait img{
   width:min(124%,560px);
   height:auto;
@@ -153,6 +172,13 @@ h1.name em{font-style:italic;color:var(--accent);font-weight:300;}
     drop-shadow(0 20px 48px rgba(0,0,0,0.22));
   position:relative;
   z-index:1;
+  opacity:0;
+  transition:opacity .35s ease;
+}
+.portrait.is-loaded img{opacity:1;}
+@keyframes portrait-skeleton-shimmer{
+  0%{background-position:180% 0, 0 0, 0 0;}
+  100%{background-position:-80% 0, 0 0, 0 0;}
 }
 .waveform{
   position:absolute;left:0;right:0;bottom:0;
@@ -367,6 +393,7 @@ footer{padding:32px 0;text-align:center;font-family:var(--mono);font-size:12px;c
   .hero-grid{grid-template-columns:1fr;}
   .portrait{order:-1;min-height:auto;max-width:360px;margin:0 auto 20px;}
   .portrait img{width:min(96vw,360px);}
+  .portrait-skeleton{width:min(96vw,360px);}
   .stats{grid-template-columns:repeat(2,1fr);}
   .stat:nth-child(2){border-right:none;}
   .about-grid{grid-template-columns:1fr;gap:20px;}
@@ -409,4 +436,9 @@ footer{padding:32px 0;text-align:center;font-family:var(--mono);font-size:12px;c
   .contact-action-row{flex-direction:column;align-items:center;}
   .contact-links{flex-direction:column;}
   .clink{border-right:none;border-bottom:1px solid var(--line);}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .portrait-skeleton{animation:none;}
+  .portrait img{transition:none;}
 }
