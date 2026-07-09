@@ -29,8 +29,8 @@ function Header() {
 
   return (
     <header>
-      <nav className="wrap" ref={navRef}>
-        <div className="brand">
+      <nav className="wrap" ref={navRef} aria-label="Primary navigation">
+        <a className="brand" href="/" aria-label="Ye Zarni Ko home">
           <svg className="brand-logo" viewBox="0 0 240 210" fill="none" aria-hidden="true" focusable="false">
             <path d="M100,30 C62,30 32,58 32,92 C32,124 56,148 88,154 L104,154 L114,176 C116,180 122,180 124,176 L134,154 L150,154 C182,148 206,124 206,92 C206,58 176,30 138,30" stroke="#7C6CF0" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M108,70 L84,94 L108,118" stroke="#F4F2FA" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
@@ -40,7 +40,7 @@ function Header() {
           </svg>
           {/* YE ZARNI KO */}
           yezarniko
-        </div>
+        </a>
         <div className={`navlinks${isMenuOpen ? ' is-open' : ''}`} id="primary-navigation">
           {navLinks.map((link) => (
             <a href={link.href} key={link.href} onClick={() => setIsMenuOpen(false)}>

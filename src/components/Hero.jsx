@@ -5,13 +5,14 @@ function Hero() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
 
   return (
-    <section className="hero">
+    <section className="hero" aria-labelledby="intro-title">
       <div className="wrap hero-grid">
         <div>
           <div className="eyebrow">Software Engineer · Yangon, Myanmar</div>
-          <h1 className="name">
+          <h1 className="name" id="intro-title">
             Ye Zarni Ko
             <br />
+            {' '}
             <em>builds things that learn.</em>
           </h1>
           <p className="role">AI / ML Engineer &nbsp;·&nbsp; Full-Stack Developer</p>
@@ -30,7 +31,7 @@ function Hero() {
           </div>
           <div className="social-row">
             {socialLinks.map((link) => (
-              <a href={link.href} key={link.label} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+              <a href={link.href} key={link.label} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'me noreferrer' : undefined}>
                 {link.label}
               </a>
             ))}

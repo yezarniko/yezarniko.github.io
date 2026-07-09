@@ -2,7 +2,7 @@ function About() {
   return (
     <section id="about">
       <div className="wrap about-grid">
-        <div className="about-label">01 — About</div>
+        <h2 className="about-label">01 — About</h2>
         <div className="about-text">
           <p>
             I'm a software engineer with a strong focus on <strong>AI, machine learning</strong>, and building practical

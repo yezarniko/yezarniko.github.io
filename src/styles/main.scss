@@ -215,7 +215,7 @@ section{padding:96px 0;border-bottom:1px solid var(--line);}
 
 /* ---------- ABOUT ---------- */
 .about-grid{display:grid;grid-template-columns:0.5fr 1fr;gap:60px;}
-.about-label{font-family:var(--mono);font-size:13px;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.1em;}
+.about-label{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.1em;}
 .about-text p{color:var(--text-muted);font-size:17px;line-height:1.85;margin-bottom:22px;max-width:640px;}
 .about-text strong{color:var(--text);font-weight:500;}
 
@@ -233,6 +233,7 @@ section{padding:96px 0;border-bottom:1px solid var(--line);}
 .skill-group-title{
   font-family:var(--mono);
   font-size:12px;
+  font-weight:400;
   color:var(--accent);
   letter-spacing:0.1em;
   text-transform:uppercase;
@@ -257,7 +258,7 @@ section{padding:96px 0;border-bottom:1px solid var(--line);}
 .proj-row:hover{background:var(--bg-raised);}
 .proj-row:last-child{border-bottom:1px solid var(--line);}
 .proj-idx{font-family:var(--mono);font-size:13px;color:var(--text-faint);}
-.proj-title{font-family:var(--serif);font-size:24px;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.proj-title{font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
 .proj-title svg{width:15px;height:15px;opacity:0.5;}
 .proj-desc{color:var(--text-muted);font-size:14.5px;max-width:520px;line-height:1.7;}
 .proj-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:220px;}
@@ -267,7 +268,7 @@ section{padding:96px 0;border-bottom:1px solid var(--line);}
 .exp-item{display:grid;grid-template-columns:160px 1fr;gap:40px;padding:36px 0;border-top:1px solid var(--line);}
 .exp-item:last-child{border-bottom:1px solid var(--line);}
 .exp-date{font-family:var(--mono);font-size:13px;color:var(--text-faint);padding-top:4px;}
-.exp-role{font-family:var(--serif);font-size:24px;margin-bottom:6px;}
+.exp-role{font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:6px;}
 .exp-co{color:var(--accent);font-size:14px;margin-bottom:14px;}
 .exp-desc{color:var(--text-muted);font-size:15px;line-height:1.75;max-width:600px;}
 .exp-loc{font-family:var(--mono);font-size:12px;color:var(--text-faint);margin-top:14px;}

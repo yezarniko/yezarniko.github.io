@@ -15,9 +15,9 @@ function Projects() {
         <div className="sec-head">
           <div>
             <div className="sec-num">03 — Selected Work</div>
-            <div className="sec-title">Featured Projects</div>
+            <h2 className="sec-title">Featured Projects</h2>
           </div>
-          <a className="sec-more" href="#">
+          <a className="sec-more" href="https://github.com/yezarniko" target="_blank" rel="me noreferrer">
             View all projects →
           </a>
         </div>
@@ -26,10 +26,10 @@ function Projects() {
             <div className="proj-row" key={project.title}>
               <div className="proj-idx">{String(index + 1).padStart(2, '0')}</div>
               <div>
-                <div className="proj-title">
+                <h3 className="proj-title">
                   {project.title}
                   <ArrowIcon />
-                </div>
+                </h3>
                 <div className="proj-desc">{project.description}</div>
               </div>
               <div className="proj-tags">
